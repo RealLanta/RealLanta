@@ -1,0 +1,166 @@
+#外观设置
+# 导入MDUI
+head:
+  css:
+    material: https://fonts.googleapis.com/icon?family=Material+Icons
+
+# 标语设置
+banner:
+  enable: true
+  title:
+    - Lanta
+    - 的
+    - 博
+    - 客
+  src: /js/ui/banner.js
+  border: true
+  cloud:
+    enable: true
+    color: "white"
+  go_down:
+    enable: true
+    icon: icon-arrow-down-s-line
+
+# 背景设置
+bg_image:
+  enable: true
+  url: https://pic.lanta.cyou/img/bg/80944600_p0.png
+  dark: https://pic.lanta.cyou/img/bg/bg.jpg
+  opacity: 0.8
+
+# 亮暗模式
+mode: auto
+
+# 头像设置
+avatar:
+  url: /images/avatar.jpg
+  rounded: true
+  opacity: 1
+
+# 图标设置
+favicon: /favicon.ico
+
+# 颜色设置
+colors:
+  primary: "#6200ee"
+  # bg: "#F5F5F5"
+  selection_bg: "#8e71c1" # 选取文字时的背景色
+  # 标签云中标签的起始色和结束色
+  # tag_start_color:
+  # tag_end_color:
+
+# 烟花设置
+fireworks:
+  enable: true
+  colors:
+    - "102, 167, 221"
+    - "62, 131, 225"
+    - "33, 78, 194"
+cursor:
+  enable: true
+  default: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/css/md-cursors/pointer.cur
+  pointer: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/css/md-cursors/link.cur
+  text: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/css/md-cursors/text.cur
+
+# 代码高亮
+codeblock:
+  copy_btn: true
+  prismjs:
+    light: default
+    dark: tomorrow
+
+# 页脚设置
+footer:
+  since: 2021
+  live_time:
+    enable: false
+    prefix: 本博客已运行
+    start_time: "2021-11-26T21:38:00"
+  custom_text: <a href="https://travellings.link/" target="_blank" rel="noopener" title="开往-友链接力"><img src="https://travellings.link/assets/logo.gif" alt="开往-友链接力" width="120"></a><br><script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1280684894'%3E%3C/span%3E%3Cscript src='https://v1.cnzz.com/z_stat.php%3Fid%3D1280684894%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+  powered:
+    enable: true
+
+
+#其他设置
+# Valine
+comment:
+  enable: true
+  tips:
+    - 若您想及时得到回复，建议直接邮箱联系我，我会每个星期查看一次邮箱
+    - 在我发现Waline这个东西的时候，试了一下，发现这是个好东西，所以我就没有用Valine了
+  candidates:
+    - waline
+
+waline:
+  enable: true
+  serverURL: https://waline.lanta.cyou/
+  # visitor: true
+  comment: false
+
+
+# 版权设置
+creative_commons:
+  license: by-nc-sa
+  post: true
+  language: deed.zh
+  clipboard: false
+
+# 打赏设置
+reward:
+  enable: false
+# 标签设置
+tags:
+  日常: "#4fc08d"
+
+# 分类设置
+categories:
+  日常: dimgray
+
+# 社交媒体设置
+social:
+  - name: RSS
+    # set rss in your root config
+    # https://github.com/hexojs/hexo-generator-feed
+    link: /atom.xml # config.feed.path
+    icon: icon-rss-line
+    color: orange
+  - name: Twitter
+    link: https://twitter.com/lanta_cyou
+    icon: icon-twitter-line
+    color: "#1da1f2"  
+  - name: GitHub
+    link: https://github.com/RealLanta
+    icon: icon-github-line
+    color: "#181717"
+  - name: E-Mail
+    link: mailto:reallanta@yandex.com
+    icon: icon-mail-line
+    color: "#8E71C1"
+  - name: Telegram
+    link: https://t.me/lanta_official
+    icon: icon-telegram-line
+    color: "#0088CC"
+  - name: Travelling
+    link: https://travellings.link
+    icon: icon-send-plane-2-line
+    color: black
+
+# 导航设置
+menu:
+  home:
+    path: /
+    icon: material-icons home
+  list:
+    - type: archives
+      path: /archives/
+      icon: material-icons work
+    - type: categories
+      path: /categories/
+      icon: material-icons folder
+    - type: tags
+      path: /tags/
+      icon: material-icons local_offer
+  custom:
+    title: Waline控制面板
+    path: https://waline.lanta.cyou/ui
+    icon: material-icons comment
