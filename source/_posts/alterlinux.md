@@ -1,9 +1,7 @@
 ---
 title: 来自日本的ArchLinux衍生版？——AlterLinux
 date: 2022-01-08 00:41:42
-categories: 体验
-tags: 
- - Linux
+tags:
 ---
 
 # 介绍

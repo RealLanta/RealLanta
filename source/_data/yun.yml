@@ -10,9 +10,8 @@ banner:
   title:
     - Lanta
     - 的
-    - 小
-    - 空
-    - 间
+    - 博
+    - 客
   src: /js/ui/banner.js
   border: true
   cloud:
@@ -25,8 +24,8 @@ banner:
 # 背景设置
 bg_image:
   enable: true
-  url: https://cdn.lanta.cyou/bg/illust_65524353_20220126_031252.png
-  dark: https://cdn.lanta.cyou/bg/illust_65524353_20220126_031252.png
+  url: https://pic.lanta.cyou/img/bg/80944600_p0.png
+  dark: https://pic.lanta.cyou/img/bg/bg.jpg
   opacity: 0.8
 
 # 亮暗模式
@@ -126,7 +125,7 @@ social:
     icon: icon-rss-line
     color: orange
   - name: Twitter
-    link: https://twitter.com/DP8_Lanta
+    link: https://twitter.com/lanta_cyou
     icon: icon-twitter-line
     color: "#1da1f2"  
   - name: GitHub
@@ -134,7 +133,7 @@ social:
     icon: icon-github-line
     color: "#181717"
   - name: E-Mail
-    link: mailto:me@lanta.cyou
+    link: mailto:reallanta@yandex.com
     icon: icon-mail-line
     color: "#8E71C1"
   - name: Telegram
