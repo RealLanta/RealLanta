@@ -33,6 +33,7 @@ jobs:
           git config --global user.email "me@lanta.cyou"
           git config --global user.name "RealLanta"
           cd $GITHUB_WORKSPACE
+          npm install hexo-cli -g
           npm install
 
       - name: Deploy
