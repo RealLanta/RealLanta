@@ -26,8 +26,8 @@ banner:
 # 背景设置
 bg_image:
   enable: true
-  url: https://cdn.lanta.cyou/bg/illust_65524353_20220126_031252.png
-  dark: https://cdn.lanta.cyou/bg/illust_65524353_20220126_031252.png
+  url: https://cdn.lanta.cyou/bg/8818fc010829949f087ddc2ce779b51d.jpg
+  dark: https://cdn.lanta.cyou/bg/8818fc010829949f087ddc2ce779b51d.jpg
   opacity: 0.8
 
 # 亮暗模式
