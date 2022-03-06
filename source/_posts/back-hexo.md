@@ -1,8 +1,9 @@
 ---
 title: 关于我返回Hexo这件事
 date: 2022-2-19 19:51:00
-categories: 日记
-tags: Linux
+categories: 每日秃头
+tags: 
+ - 日常
 ---
 
 # 为什么我返回了Hexo？

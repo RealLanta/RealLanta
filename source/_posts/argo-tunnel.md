@@ -21,7 +21,7 @@ tags: Cloudflare
 
 # 安装
 
-这里用到是 Linux AR­M64 版的 [cloudflared](https://github.com/cloudflare/cloudflared/releases/tag/2022.1.2)，其他平台的使用方法基本相同
+这里用到是 Linux AR­M64 版的 [cloudflared](https://github.com/cloudflare/cloudflared/releases)，其他平台的使用方法基本相同
 
 
 
