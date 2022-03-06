@@ -27,7 +27,7 @@ banner:
 bg_image:
   enable: true
   url: https://cdn.lanta.cyou/bg/8818fc010829949f087ddc2ce779b51d.jpg
-  dark: https://cdn.lanta.cyou/bg/8818fc010829949f087ddc2ce779b51d.jpg
+  dark: https://cdn.lanta.cyou/bg/illust_60784129_20190420_124118%E6%97%A0%E5%AD%97.jpg
   opacity: 0.8
 
 # 亮暗模式
