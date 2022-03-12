@@ -18,9 +18,9 @@ categories: 教程
 
 ![](https://pic.lanta.cyou/img/20220312051255.png)
 
-# 注册Algolia
+# 注册并配置Algolia
 
-无论如何，我们必须要先注册Algolia，否则我们的网站将没有Algolia的使用权限，即使开启了对Algolia的支持，也只是一片空白
+无论如何，我们必须要先注册并配置好Algolia，否则我们的网站将没有Algolia的使用权限，即使开启了对Algolia的支持，也只是一片空白
 
 ![](https://pic.lanta.cyou/img/20220312230356.png)
 
@@ -30,7 +30,21 @@ categories: 教程
 
 ![](https://pic.lanta.cyou/img/20220312230814.png)
 
-# API Key
+## 新建Indices
+
+在左侧栏的**Products**有个**Search**，我们点进去
+
+![](https://pic.lanta.cyou/img/20220313001226.png)
+
+一打开就是Indices了，我们点击**Create Index**
+
+![](https://pic.lanta.cyou/img/20220313001245.png)
+
+![](https://pic.lanta.cyou/img/20220313001318.png)
+
+这样就可以了
+
+## API Key
 进到Algolia的[管理应用程序](https://www.algolia.com/account/applications)
 
 ![](https://pic.lanta.cyou/img/20220312232432.png)
@@ -45,7 +59,7 @@ categories: 教程
 
 不过这里我们只需要**Admin API Key**，因为它自带的API Key基本上是不能用的，所以接下来我们要新建一个API Key出来
 
-## 新建API Key
+### 新建API Key
 
 点击All API Keys，然后New API Key
 
@@ -53,7 +67,7 @@ categories: 教程
 
 **Description**也就是简介，这里看你自己喜欢怎么填
 
-**Indices**中的**Index name**这里可以随便填，比如我填了`hexo`
+**Indices**中的**Index name**这个就是我们刚刚新建的
 
 ![](https://pic.lanta.cyou/img/20220313000048.png)
 
