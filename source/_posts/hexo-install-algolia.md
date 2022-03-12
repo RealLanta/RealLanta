@@ -72,18 +72,6 @@ algolia:
     - title
 ```
 
-### 您正在使用Github Actions部署您的Hexo博客？
-
-这里注意一下，如果你使用的是Github Actions部署Hexo的方案，我建议你使用Github自带的`Actions secrets`以保护自己的密钥不被泄露
-
-![](https://pic.lanta.cyou/img/20220312232331.png)
-
-配置文件的密钥区只需要填`${{ secrets.你取的名字 }}`，Github在部署的时候会自动帮你补上去
-
-例如我自己的：
-
-![](https://pic.lanta.cyou/img/20220312233516.png)
-
 ## 通过npm安装模块
 
 > 您需要先安装 hexo-algolia 或 hexo-algoliasearch，并根据它们的说明文档进行相应的配置。

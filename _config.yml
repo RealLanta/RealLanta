@@ -102,8 +102,8 @@ theme: yun
 # Algolia
 algolia:
   appId: "SGBOUBAC3O"
-  apiKey: "${{ secrets.ALGOLIA_KEY }}"
-  adminApiKey: "${{ secrets.ALGOLIA_ADMIN_KEY }}"
+  apiKey: "dfca6d47afde6245eededdc6c8fb3235"
+  adminApiKey: "c4b2eac20f811842a87e8b6b690d14d3"
   chunkSize: 5000
   indexName: "my-hexo-blog"
   fields:
