@@ -56,3 +56,10 @@ algolia_search:
 ```
 
 ![](https://pic.lanta.cyou/img/20220312230011.png)
+
+然后还要再加上这一段
+
+```yaml
+engine_search:
+  enable: false
+```
