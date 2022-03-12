@@ -89,7 +89,7 @@ categories: 教程
 
 > 您需要先安装 hexo-algolia 或 hexo-algoliasearch，并根据它们的说明文档进行相应的配置。
 
-因为各种原因我推荐你使用**hexo-algolia**那我们就直接`npm install hexo-algolia`即可
+因为各种原因我推荐你使用**hexo-algolia**那我们就直接`npm install hexo-algolia --save`即可
 
 ![](https://pic.lanta.cyou/img/20220312225250.png)
 
@@ -124,6 +124,18 @@ algolia_search:
 ```
 
 ![](https://pic.lanta.cyou/img/20220312230011.png)
+
+## 上传数据至Algolia
+
+运行以下命令
+
+```bash
+export HEXO_ALGOLIA_INDEXING_KEY= #刚刚新建的API Key
+hexo clean
+hexo algolia
+```
+
+这样理论来说Algolia就会新增索引了
 
 # 参考资料
 本文参考了以下资料进行写作
