@@ -84,7 +84,13 @@ footer:
 
 
 #其他设置
-# Valine
+# Algolia
+algolia_search:
+  enable: true
+  hits:
+    per_page: 10 # the number of search results per page
+
+# Waline
 comment:
   enable: true
   tips:
