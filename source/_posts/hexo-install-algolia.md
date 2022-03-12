@@ -89,9 +89,11 @@ categories: 教程
 
 > 您需要先安装 hexo-algolia 或 hexo-algoliasearch，并根据它们的说明文档进行相应的配置。
 
-因为各种原因我推荐你使用**hexo-algolia**那我们就直接`npm install hexo-algolia --save`即可
+因为各种原因我推荐你使用**hexo-algolia**，所以我们就直接`npm install hexo-algolia --save`即可
 
 ![](https://pic.lanta.cyou/img/20220312225250.png)
+
+> 这里要注意一下，hexo-algolia和hexo-algoliasearch两者**不可兼得**，如果你不小心两个都装了就用`npm remove`其中一个解决问题！
 
 ## 修改Hexo的配置文件
 
@@ -102,10 +104,11 @@ algolia:
   applicationID: "" #AppID
   apiKey: "" #刚刚新建的API Key
   adminApiKey: "" #Admin API Key
-  indexname: "" #这个就是Indices填的
+  indexName: "" #这个就是Indices填的
   chunkSize: 5000
 ```
 
+> 这里要注意一下，这个大小写**一定要对**，不然没办法正常使用
 ## 修改Yun的配置文件
 
 如果你还在使用旧版的Yun，那么你的配置文件应该是在`source/_data/yun.yml`
@@ -131,11 +134,12 @@ algolia_search:
 
 ```bash
 export HEXO_ALGOLIA_INDEXING_KEY= #刚刚新建的API Key
-hexo clean
 hexo algolia
 ```
 
 这样理论来说Algolia就会新增索引了
+
+![](https://pic.lanta.cyou/img/20220313004944.png)
 
 # 参考资料
 本文参考了以下资料进行写作
