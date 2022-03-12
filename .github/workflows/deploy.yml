@@ -39,6 +39,6 @@ jobs:
       - name: Deploy
         run: |
           hexo clean
-          export HEXO_ALGOLIA_INDEXING_KEY=54266a3c34ab8f1944928a628b2b4f5e
+          export HEXO_ALGOLIA_INDEXING_KEY=${{ secrets.HEXO_ALGOLIA_INDEXING_KEY }}
           hexo algolia
           hexo deploy
