@@ -18,11 +18,23 @@ tags:
 
 各类主题的安装方法各不相同，我这里以我自己用的[Yun主题](https://github.com/YunYouJun/hexo-theme-yun)为例子
 
+## 注册Algolia
+
+无论如何，我们必须要先注册Algolia，否则我们的网站将没有Algolia的使用权限，即使开启了对Algolia的支持，也只是一片空白
+
+![](https://pic.lanta.cyou/img/20220312230356.png)
+
+[Algolia官网](https://www.algolia.com/)
+
+按道理来说只要填好邮箱和密码，然后再验证一下邮箱就可以注册完成
+
+![](https://pic.lanta.cyou/img/20220312230814.png)
+
 ## 通过npm安装模块
 
 > 您需要先安装 hexo-algolia 或 hexo-algoliasearch，并根据它们的说明文档进行相应的配置。
 
-那我们就直接`npm install hexo-algolia`即可
+那我们可以两个都装，就直接`npm install hexo-algolia hexo-algoliasearch`即可
 
 ![](https://pic.lanta.cyou/img/20220312225250.png)
 
