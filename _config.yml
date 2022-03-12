@@ -105,7 +105,6 @@ algolia:
   apiKey: "dfca6d47afde6245eededdc6c8fb3235"
   adminApiKey: "c4b2eac20f811842a87e8b6b690d14d3"
   chunkSize: 5000
-  indexName: "my-hexo-blog"
   fields:
     - content:strip:truncate,0,500
     - excerpt:strip
