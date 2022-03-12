@@ -1,7 +1,11 @@
 ---
 title: 静态博客也能有自己的搜索引擎了？——给Hexo加装Algolia实现增加搜索文章功能！
 date: 2022-03-12 05:13:46
-tags:
+tags: 
+ - Hexo
+ - Github Pages
+ - Algolia
+categories: 教程
 ---
 
 # 前言
@@ -46,15 +50,15 @@ tags:
 
 ![](https://pic.lanta.cyou/img/20220312232628.png)
 
-复制好appID和**Usage API Key**以及**Admin API Key**
+复制好appID和**Search-Only API Key**以及**Admin API Key**
 
 然后在`_config.yml`加上这一段：
 
 ```yaml
 algolia:
   appId: "就你刚刚复制的"
-  apiKey: "就你刚刚复制的"
-  adminApiKey: "就你刚刚复制的"
+  apiKey: "就你刚刚复制的" #这里填Search-Only API Key
+  adminApiKey: "就你刚刚复制的" #这里填Admin API Key
   chunkSize: 5000
   indexName: "my-hexo-blog"
   fields:
