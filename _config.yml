@@ -99,6 +99,23 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: yun
 
+# Algolia
+algolia:
+  appId: "SGBOUBAC3O"
+  apiKey: "${{ secrets.ALGOLIA_KEY }}"
+  adminApiKey: "${{ secrets.ALGOLIA_ADMIN_KEY }}"
+  chunkSize: 5000
+  indexName: "my-hexo-blog"
+  fields:
+    - content:strip:truncate,0,500
+    - excerpt:strip
+    - gallery
+    - permalink
+    - photos
+    - slug
+    - tags
+    - title
+
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:

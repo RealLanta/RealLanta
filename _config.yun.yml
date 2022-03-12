@@ -89,8 +89,6 @@ algolia_search:
   enable: true
   hits:
     per_page: 10 # the number of search results per page
-engine_search:
-  enable: false
 
 # Waline
 comment:

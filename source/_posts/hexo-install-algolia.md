@@ -14,11 +14,7 @@ tags:
 
 ![](https://pic.lanta.cyou/img/20220312051255.png)
 
-# 安装
-
-各类主题的安装方法各不相同，我这里以我自己用的[Yun主题](https://github.com/YunYouJun/hexo-theme-yun)为例子
-
-## 注册Algolia
+# 注册Algolia
 
 无论如何，我们必须要先注册Algolia，否则我们的网站将没有Algolia的使用权限，即使开启了对Algolia的支持，也只是一片空白
 
@@ -29,6 +25,60 @@ tags:
 按道理来说只要填好邮箱和密码，然后再验证一下邮箱就可以注册完成
 
 ![](https://pic.lanta.cyou/img/20220312230814.png)
+
+# 安装
+
+各类主题的安装方法各不相同，我这里以我自己用的[Yun主题](https://github.com/YunYouJun/hexo-theme-yun)为例子
+
+## 修改Hexo的配置文件
+
+接下来，我们需要把Algolia的`appID`和`apiKey`填入至Hexo的配置文件
+
+进到Algolia的[管理应用程序](https://www.algolia.com/account/applications)
+
+![](https://pic.lanta.cyou/img/20220312232432.png)
+
+点API Keys
+
+![](https://pic.lanta.cyou/img/20220312232519.png)
+
+这里就可以看到我们的appID和apiKey了
+
+![](https://pic.lanta.cyou/img/20220312232628.png)
+
+复制好appID和**Usage API Key**以及**Admin API Key**
+
+然后在`_config.yml`加上这一段：
+
+```yaml
+algolia:
+  appId: "就你刚刚复制的"
+  apiKey: "就你刚刚复制的"
+  adminApiKey: "就你刚刚复制的"
+  chunkSize: 5000
+  indexName: "my-hexo-blog"
+  fields:
+    - content:strip:truncate,0,500
+    - excerpt:strip
+    - gallery
+    - permalink
+    - photos
+    - slug
+    - tags
+    - title
+```
+
+### 您正在使用Github Actions部署您的Hexo博客？
+
+这里注意一下，如果你使用的是Github Actions部署Hexo的方案，我建议你使用Github自带的`Actions secrets`以保护自己的密钥不被泄露
+
+![](https://pic.lanta.cyou/img/20220312232331.png)
+
+配置文件的密钥区只需要填`${{ secrets.你取的名字 }}`，Github在部署的时候会自动帮你补上去
+
+例如我自己的：
+
+![](https://pic.lanta.cyou/img/20220312233516.png)
 
 ## 通过npm安装模块
 
@@ -56,10 +106,3 @@ algolia_search:
 ```
 
 ![](https://pic.lanta.cyou/img/20220312230011.png)
-
-然后还要再加上这一段
-
-```yaml
-engine_search:
-  enable: false
-```
