@@ -101,19 +101,11 @@ theme: yun
 
 # Algolia
 algolia:
-  appId: "SGBOUBAC3O"
-  apiKey: "54266a3c34ab8f1944928a628b2b4f5e"
-  adminApiKey: "c4b2eac20f811842a87e8b6b690d14d3"
+  applicationID: "SGBOUBAC3O" #AppID
+  apiKey: "54266a3c34ab8f1944928a628b2b4f5e" #刚刚新建的API Key
+  adminApiKey: "c4b2eac20f811842a87e8b6b690d14d3" #Admin API Key
+  indexname: "hexo" #这个就是Indices填的
   chunkSize: 5000
-  fields:
-    - content:strip:truncate,0,500
-    - excerpt:strip
-    - gallery
-    - permalink
-    - photos
-    - slug
-    - tags
-    - title
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

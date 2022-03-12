@@ -71,35 +71,26 @@ categories: 教程
 
 各类主题的安装方法各不相同，我这里以我自己用的[Yun主题](https://github.com/YunYouJun/hexo-theme-yun)为例子
 
+# 通过npm安装模块
+
+> 您需要先安装 hexo-algolia 或 hexo-algoliasearch，并根据它们的说明文档进行相应的配置。
+
+因为各种原因我推荐你使用**hexo-algolia**那我们就直接`npm install hexo-algolia`即可
+
+![](https://pic.lanta.cyou/img/20220312225250.png)
+
 ## 修改Hexo的配置文件
 
 在`_config.yml`加上这一段：
 
 ```yaml
 algolia:
-  appId: "就你刚刚复制的"
-  apiKey: "就你刚刚复制的" #这里填Search-Only API Key
-  adminApiKey: "就你刚刚复制的" #这里填Admin API Key
+  applicationID: "" #AppID
+  apiKey: "" #刚刚新建的API Key
+  adminApiKey: "" #Admin API Key
+  indexname: "" #这个就是Indices填的
   chunkSize: 5000
-  indexName: "my-hexo-blog"
-  fields:
-    - content:strip:truncate,0,500
-    - excerpt:strip
-    - gallery
-    - permalink
-    - photos
-    - slug
-    - tags
-    - title
 ```
-
-## 通过npm安装模块
-
-> 您需要先安装 hexo-algolia 或 hexo-algoliasearch，并根据它们的说明文档进行相应的配置。
-
-那我们就直接`npm install hexo-algolia`即可
-
-![](https://pic.lanta.cyou/img/20220312225250.png)
 
 ## 修改Yun的配置文件
 
