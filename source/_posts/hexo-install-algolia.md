@@ -30,14 +30,7 @@ categories: 教程
 
 ![](https://pic.lanta.cyou/img/20220312230814.png)
 
-# 安装
-
-各类主题的安装方法各不相同，我这里以我自己用的[Yun主题](https://github.com/YunYouJun/hexo-theme-yun)为例子
-
-## 修改Hexo的配置文件
-
-接下来，我们需要把Algolia的`appID`和`apiKey`填入至Hexo的配置文件
-
+# API Key
 进到Algolia的[管理应用程序](https://www.algolia.com/account/applications)
 
 ![](https://pic.lanta.cyou/img/20220312232432.png)
@@ -50,9 +43,37 @@ categories: 教程
 
 ![](https://pic.lanta.cyou/img/20220312232628.png)
 
-复制好appID和**Search-Only API Key**以及**Admin API Key**
+不过这里我们只需要**Admin API Key**，因为它自带的API Key基本上是不能用的，所以接下来我们要新建一个API Key出来
 
-然后在`_config.yml`加上这一段：
+## 新建API Key
+
+点击All API Keys，然后New API Key
+
+![](https://pic.lanta.cyou/img/20220312235151.png)
+
+**Description**也就是简介，这里看你自己喜欢怎么填
+
+**Indices**中的**Index name**这里可以随便填，比如我填了`hexo`
+
+![](https://pic.lanta.cyou/img/20220313000048.png)
+
+**ACL**这里，我们把**addObject**和**deleteObject**加上去
+
+![](https://pic.lanta.cyou/img/20220312235608.png)
+
+这样，你就得到了一个新的API Key了
+
+![](https://pic.lanta.cyou/img/20220313000211.png)
+
+复制好appID和**API Key**以及**Admin API Key**备用
+
+# 安装
+
+各类主题的安装方法各不相同，我这里以我自己用的[Yun主题](https://github.com/YunYouJun/hexo-theme-yun)为例子
+
+## 修改Hexo的配置文件
+
+在`_config.yml`加上这一段：
 
 ```yaml
 algolia:
@@ -76,7 +97,7 @@ algolia:
 
 > 您需要先安装 hexo-algolia 或 hexo-algoliasearch，并根据它们的说明文档进行相应的配置。
 
-那我们可以两个都装，就直接`npm install hexo-algolia hexo-algoliasearch`即可
+那我们就直接`npm install hexo-algolia`即可
 
 ![](https://pic.lanta.cyou/img/20220312225250.png)
 
@@ -98,3 +119,10 @@ algolia_search:
 ```
 
 ![](https://pic.lanta.cyou/img/20220312230011.png)
+
+# 参考资料
+本文参考了以下资料进行写作
+
+https://yun.yunyoujun.cn/guide/third-party-support.html#algolia
+
+https://blog.csdn.net/qq_35479468/article/details/107335663

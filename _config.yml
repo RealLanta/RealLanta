@@ -102,7 +102,7 @@ theme: yun
 # Algolia
 algolia:
   appId: "SGBOUBAC3O"
-  apiKey: "dfca6d47afde6245eededdc6c8fb3235"
+  apiKey: "54266a3c34ab8f1944928a628b2b4f5e"
   adminApiKey: "c4b2eac20f811842a87e8b6b690d14d3"
   chunkSize: 5000
   fields:
