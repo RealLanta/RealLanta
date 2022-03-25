@@ -1,5 +1,5 @@
 ---
-title: [保姆级教程]只要用过Linux就能学会的ArchLinux安装教程！——ArchLinux从入门到传教
+title: 只要用过Linux就能学会的ArchLinux安装教程！——ArchLinux从入门到传教
 date: 2022-03-26 02:19:37
 tags: 
  - ArchLinux
