@@ -3,6 +3,7 @@
 head:
   css:
     material: https://fonts.googleapis.com/icon?family=Material+Icons
+    remix: https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css
 
 # 标语设置
 banner:
@@ -148,6 +149,10 @@ social:
     link: https://t.me/lanta_official
     icon: icon-telegram-line
     color: "#0088CC"
+  - name: Video Station
+    link: https://lanta.cyou/video/list
+    icon: ri-video-line
+    color: black
   - name: Travelling
     link: https://travellings.link
     icon: icon-send-plane-2-line
