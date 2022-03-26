@@ -150,7 +150,7 @@ social:
     icon: icon-telegram-line
     color: "#0088CC"
   - name: Video Station
-    link: https://lanta.cyou/video/list
+    link: https://lanta.cyou/video/list.html
     icon: ri-video-line
     color: black
   - name: Travelling
