@@ -21,14 +21,6 @@ Vercel你可以理解为跟Heroku差不多的东西，总之就是可以搭建�
 
 当然你也可以去用[CloudStudio](https://cloudstudio.net/)或者[goorm](https://ide.goorm.io/)这类的IDE服务，有小鸡的也行，这样子就不用在你自己电脑装NPM了
 
-### 设置CNPM
-
-如果你自己的网络连接NPM不友好可以尝试使用CNPM
-
-~~~bash
-npm install -g cnpm --registry=https://registry.npm.taobao.org
-~~~
-
 ## 安装Vercel CLI
 
 >Vercel CLI的安装需要使用root权限，如果你是在普通用户的环境下安装记得加sudo
@@ -36,13 +28,7 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org
 使用NPM安装
 
 ~~~bash
-npm i -g vercel
-~~~
-
-使用CNPM安装
-
-~~~
-cnpm i -g vercel
+sudo npm i -g vercel
 ~~~
 
 登录Vercel
@@ -51,7 +37,7 @@ cnpm i -g vercel
 vercel login
 ~~~
 
-![](https://pic.lanta.cyou/img/2021-12-11_11-25.png)
+![](https://pic.lanta.cyou/img/20220326073022.png)
 
 **如果你Vercel帐号是使用Github登录的直接Github就可以了**
 
@@ -83,11 +69,13 @@ vercel login
     "name": "BlogProxy",
     "version": 2,
     "routes": [
-      {"src": "/(.*)","dest": "https://blog.lantacn.xyz/$1"}
+      {"src": "/(.*)","dest": "https://blog.lanta.cyou/$1"}
     ]
   }
   
 ~~~
+
+<div class="warning">
 
 >**注意**
 >
@@ -96,6 +84,8 @@ vercel login
 >网站里面如果有以前的资源引用不用改域名，直接用就可以了
 >
 >因为你的最终访问地址依旧是你的主域名
+
+</div>
 
 ## 上传至Vercel
 
@@ -121,11 +111,15 @@ Which scope do you want to deploy to? 帐号
 What’s the name of your existing project? 项目名
 ~~~
 
->**知识点**
->
+<div class="info">
+
 >如果你没有创建好的项目，请输入N，他就可以帮你创建项目
 
+</div>
+
 然后等他跑完就可以了
+
+![](https://pic.lanta.cyou/img/20220326073500.png)
 
 ## 绑定域名
 
