@@ -16,7 +16,7 @@ Typecho说实话，我用不惯
 
 # 我现在是怎么部署Hexo的
 
-我参考了知乎的[这篇图文]([GitHub Actions 来自动部署 Hexo - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/170563000))，通过一个Github Actions环境去部署Hexo
+我参考了知乎的[这篇图文](https://zhuanlan.zhihu.com/p/170563000)，通过一个Github Actions环境去部署Hexo
 
 整体做法也比较简单，这样子如果需要换另外一台电脑进行写作，也就不需要再在电脑上部署环境了
 
