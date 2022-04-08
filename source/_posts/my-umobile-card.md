@@ -41,6 +41,9 @@ U Mobile有自己的门户网站和APP~~（这不他妈废话）~~
 
 如果你不想走~~淘宝奸商~~的充值服务并且手上有Visa或Mastercard那么你可以直接去U Mobile官方充值
 
+不过有个坑就是root了就没办法用APP了，这就有点麻烦了
+![](https://pic.lanta.cyou/img/photo_2022-04-08_19-50-29.jpg)
+
 ## 注册
 
 首先我们去U Mobile网站注册一下我们的号码
