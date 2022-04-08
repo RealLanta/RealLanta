@@ -33,6 +33,13 @@ links:
     blog: 小岚的小窝
     desc: 白嫖的天空无限蓝
     color: "#0078e7" # 代表色
+
+  - url: https://www.zyglq.cn
+    avatar: https://cos.zyglq.cn/1l.jpg
+    name: explorer的blog
+    desc: 14岁，事初中生
+    color:
+
 placeholder: 这个站主很懒，连个介绍都不写 # 默认对友链的描述
 tip: 友链加载中～如失败请刷新重试～
 ---
