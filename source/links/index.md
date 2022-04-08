@@ -36,7 +36,8 @@ links:
 
   - url: https://www.zyglq.cn
     avatar: https://cos.zyglq.cn/1l.jpg
-    name: explorer的blog
+    name: explorer
+    blog: explorer的blog
     desc: 14岁，事初中生
     color: "#39c5bb"
 
