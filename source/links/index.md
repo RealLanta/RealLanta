@@ -11,34 +11,34 @@ links:
     name: 云游君
     blog: 云游君的小站
     desc: All at sea.
-    color: "#0078e7" # 代表色
+    color: "#0078e7"
 
   - url: https://edenjohnson.cyou/
     avatar: https://pic.edenjohnson.cyou/images/20200625174516.png
     name: EdenJohnson
     blog: Eden瞎写小屋
     desc: 准初三屑的博客
-    color: "#0078e7" # 代表色
+    color: "#0078e7"
 
   - url: https://ahdark.com/
     avatar: https://sdn.ahdark.com/avatar/394044eaff12a95b0b91cbdc2e8871a4?s=512
     name: AHdark
     blog: AHdark Blog
     desc: 亦余心之所善兮，虽九死其犹未悔。
-    color: "#FF8000" # 代表色
+    color: "#FF8000"
 
   - url: https://blog.589000.xyz/
     avatar: https://q1.qlogo.cn/g?b=qq&nk=3152293832&s=640
     name: 小岚
     blog: 小岚的小窝
     desc: 白嫖的天空无限蓝
-    color: "#0078e7" # 代表色
+    color: "#0078e7"
 
   - url: https://www.zyglq.cn
     avatar: https://cos.zyglq.cn/1l.jpg
     name: explorer的blog
     desc: 14岁，事初中生
-    color:
+    color: "#0078e7"
 
 placeholder: 这个站主很懒，连个介绍都不写 # 默认对友链的描述
 tip: 友链加载中～如失败请刷新重试～
