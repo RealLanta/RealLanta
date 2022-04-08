@@ -59,23 +59,13 @@ yay -S picgo-appimage
 
 这样子就能设置图片了
 
-## Github Pages+Vercel
-
-其实这个非必要，但是考虑到PicGo的默认获取方式都是直接从Github的**Raw**获取，一样都有地区问题，所以还是得搞一下的
-
-其实也很简单
-
-### 设置Github Pages
-
-![](https://pic.lanta.cyou/img/2021-12-17_23-58.png)
-
-![](https://pic.lanta.cyou/img/2021-12-17_23-59.png)
-
-（另外，如果你刚刚上传完打开Github Pages链接发现是404是很正常的，因为上传到Github的时候需要等一会儿部署到Github Pages）
-
 ### 设置Vercel
 
-具体如何部署Vercel的反代我已经写过一篇[文章](https://www.lantacn.xyz/2021/12/11/vercel-proxy/)了，直接把Github Pages链接复制进去就行
+因为Github Pages的速度在国内实在惨不忍睹
+
+所以建议使用Vercel
+
+可以参考我[这篇文章](https://www.lanta.cyou/2021/12/31/vercel-github-pages/)
 
 ## 图片测试
 
