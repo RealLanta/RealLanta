@@ -743,6 +743,14 @@ sudo systemctl enable lightdm
 yay -S icaligua
 ```
 
-# 结尾
+# 疑难解答
 
-最后，ArchLinux的安装就大功告成了，剩下的就由你慢慢探索了，祝你旅途愉快
+## 更新pacman源的时候出现error setting certificate verify locations
+
+输入以下命令解决
+
+```bash
+trust extract-compat
+```
+
+（来自[Reddit r/Proxmox](https://www.reddit.com/r/Proxmox/comments/plh41w/arch_linux_lxc_error_setting_certificate_verify/)）
