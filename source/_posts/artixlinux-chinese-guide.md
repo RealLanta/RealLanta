@@ -159,6 +159,7 @@ LiveCD中有`parted`、`fdisk`、`cfdisk`等工具，前两个比较麻烦，`cf
 首先我们要打开cfdisk
 
 <div class="info">
+
 > 设sdX为你的硬盘号
 
 </div>
@@ -174,6 +175,7 @@ cfdisk /dev/sdX # 后面这个就是硬盘设备名
 ### 分区格式
 
 <div class="info">
+
 >  用户资料分区是可选的，可以将用户资料存放在系统盘中
 
 </div>
@@ -188,6 +190,7 @@ cfdisk /dev/sdX # 后面这个就是硬盘设备名
 #### GPT（UEFI引导）推荐分区格式：
 
 <div class="danger">
+
 > 如果你之前已经在硬盘中另外装了其他使用UEFI引导的系统（比如Windows）请务必不要把引导分区删掉重建，否则会导致原来的系统无法进入！
 
 </div>
@@ -201,11 +204,13 @@ cfdisk /dev/sdX # 后面这个就是硬盘设备名
 ## 格式化分区
 
 <div class="danger">
+
 > 如果你之前已经在硬盘中另外装了其他使用UEFI引导的系统（比如Windows）请务必不要把引导分区格式化，否则会导致原来的系统无法进入！
 
 </div>
 
 <div class="info">
+
 > 设引导分区为 /dev/sda1，系统分区为 /dev/sda2
 
 </div>
@@ -222,6 +227,7 @@ mkfs.vfat /dev/sda1 # 格式化 /dev/sda1 为 FAT32 文件系统（引导分区�
 ### GPT
 
 <div class="info">
+
 > 设引导分区为 /dev/sda1，系统分区为 /dev/sda2，用户资料分区为/dev/sda3
 
 </div>
