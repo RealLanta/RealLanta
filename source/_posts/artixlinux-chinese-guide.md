@@ -419,6 +419,7 @@ grub-mkconfig -o /boot/grub/grub.cfg  # 生成 GRUB 配置
 ### Legacy + MBR
 
 <div class="info">
+
 > 设sdX为你的硬盘号
 
 </div>
@@ -708,6 +709,7 @@ sudo pacman -S noto-fonts noto-fonts-emoji noto-fonts-extra #Noto Sans
 </div>
 
 <div class="info">
+
 > 以下资料整理来自[Chi_Tang的博客](https://chitang.tech/posts/arch-guide/)
 
 </div>
