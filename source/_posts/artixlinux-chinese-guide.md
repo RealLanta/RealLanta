@@ -782,6 +782,18 @@ sudo pacman -S lib32-mesa # 32 位 OpenGL 支持
 sudo pacman -S pocl # OpenCL 支持
 ```
 
+## 安装Xorg和Xorg Server
+
+因为某些原因，如果要在Artix Linux使用桌面环境推荐安装Xorg和Xorg Server两个一起安装
+
+```bash
+sudo pacman -S xorg
+```
+
+```bash
+sudo pacman -S xorg-server
+```
+
 ## 图形桌面
 
 常见的图形桌面且能安装在Artix Linux有以下两种
