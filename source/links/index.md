@@ -41,6 +41,14 @@ links:
     desc: 14岁，事初中生
     color: "#39c5bb"
 
+ -  url: "https://gmoe.cc",
+    avatar: "https://gmoe.cc/img/gu.jpg",
+    name: 咕谷酱",
+    blog: "咕萌小站",
+    desc: "「世界に忘れられた」",
+    color: "#deae9c"
+
+
 placeholder: 这个站主很懒，连个介绍都不写 # 默认对友链的描述
 tip: 友链加载中～如失败请刷新重试～
 ---
