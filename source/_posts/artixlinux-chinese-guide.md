@@ -1,27 +1,50 @@
 ---
-title: 只要用过Linux就能学会的ArchLinux安装教程！——ArchLinux从入门到传教
-date: 2022-03-26 02:19:37
+title: 从入门到偷ArchLinuxCN源最后逃回ArchLinux——最详细的Artix Linux中文保姆级安装教程
+date: 2022-04-09 08:47:57
 tags: 
- - ArchLinux
  - Linux
  - 保姆级教程
+ - Artix Linux
 categories: 教程
 ---
+
+<div class="info">
+
+>Thanks a lot for [Shikikan_Neko08](https://twitter.com/Shikikan_Neko08)
+>
+>He helped me solve a lot of problems during the install Artix Linux process
+>
+>非常感谢[Shikikan_Neko08](https://twitter.com/Shikikan_Neko08)，他帮我解决了安装 Artix Linux 过程中的很多问题
+
+</div>
 
 <div class="warning">
 
 > Warning
 >
-> 本文仅为 [Arch Linux](https://archlinux.org) 的第三方安装教程，不代表 [Arch Linux](https://archlinux.org) 官方，因此跟[Arch Linux Wiki](https://wiki.archlinux.org)中的[Installation guide](https://wiki.archlinux.org/title/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))有所差异，但这也意味着本教程的内容将会**更为全面**
->
+> 本文仅为 [Artix Linux](https://artixlinux.org) 的第三方安装教程，不代表 [Artix Linux](https://artixlinux.org) 官方，因此跟[Artix Linux Wiki](https://wiki.artixlinux.org)中的[Installation](https://wiki.artixlinux.org/Main/Installation)有所差异，但这也意味着本教程的内容将会**更为全面**
 
 </div>
 
 <div class="info">
 
->[Arch Linux](https://archlinux.org) 的特点是[Rolling Update](https://zh.wikipedia.org/zh-tw/%E6%BB%BE%E5%8B%95%E7%99%BC%E8%A1%8C)(滚动更新)，是指软件开发中**经常性**将更新发送到软件的概念
+>[Artix Linux](https://artixlinux.org)的特点是[systemd-free](https://nosystemd.org/)(无systemd)，是指没有systemd的Linux
 >
->也就是说，[Arch Linux](https://archlinux.org) 的软件库是经常性更新的，你也需要**经常更新软件源**，操作方法很简单，只要`sudo pacman -Syu`即可；如果不经常更新，则可能导致滚动更新后**无法正常使用系统**
+>systemd相当于Windows中的注册表，没有它就不能正常运行，但是Linux社区因为某种原因讨厌systemd，出现了无systemd的内核（例如[OpenRC](https://wiki.gentoo.org/wiki/Project:OpenRC)、[runit](http://smarden.org/runit/)、[s6](https://skarnet.org/software/s6/)）
+>
+>一般情况下，如果你只是普通的日常使用Linux，使用systemd作为内核的Linux就已经足够了
+>
+>而且因为种种原因，**我不推荐所有Linux新手使用没有systemd的Linux**
+>
+>一般情况下，我推荐你使用runit，所以本文将会以runit的Artix Linux作为演示
+
+</div>
+
+<div class="info">
+
+>[Artix Linux](https://artixlinux.org)和[Arch Linux](https://archlinux.org) 一样的特点是[Rolling Update](https://zh.wikipedia.org/zh-tw/%E6%BB%BE%E5%8B%95%E7%99%BC%E8%A1%8C)(滚动更新)，是指软件开发中**经常性**将更新发送到软件的概念
+>
+>也就是说，[Artix Linux](https://artixlinux.org) 的软件库是经常性更新的，你也需要**经常更新软件源**，操作方法很简单，只要`sudo pacman -Syu`即可；如果不经常更新，则可能导致滚动更新后**无法正常使用系统**
 >
 >如果你并不想~~或者说懒~~经常更新软件源，我建议你使用`linux-lts`内核
 
@@ -29,33 +52,29 @@ categories: 教程
 
 # 准备操作
 
-首先你需要确保你的网络畅通（放心，这不需要你准备梯子，Arch Linux是有中国镜像源的），Arch Linux是**在线安装**
+首先你需要确保你的网络畅通（放心，这不需要你准备梯子，Artix Linux是有南京大学镜像源的），Artix Linux是**在线安装**
 
-## 下载LiveCD
+# 下载LiveCD
 
-Arch Linux有多个镜像源，在[Arch Linux Downloads](https://archlinux.org/download/)中往下滑就可以找到
+前往[NJU Mirror（南京大学镜像站）](https://mirror.nju.edu.cn/artixlinux-iso/)下载
 
-我个人使用的是[清华大学开源软件镜像站](https://mirrors.tuna.tsinghua.edu.cn/)，你也可以用[北京外国语大学开源软件镜像站](https://mirrors.bfsu.edu.cn/)，又或者[中国科学技术大学开源软件镜像](https://mirrors.ustc.edu.cn)
+![](https://pic.lanta.cyou/img/20220409090124.png)
 
-这里以清华大学开源软件镜像站为例
-
-首先前往[清华大学开源软件镜像站](https://mirrors.tuna.tsinghua.edu.cn/archlinux/iso/2022.03.01/)中下载ISO
-
-![](https://pic.lanta.cyou/img/20220326030059.png)
-
-下载完成之后备用
+下载完成后备用
 
 ## 刻录到U盘
 
-你可以使用以下几种方式来将Arch Linux镜像刻录到U盘中
+你可以使用以下几种方式来将Artix Linux镜像刻录到U盘中
 
 <div class="danger">
+
 
 > 刻录到U盘会导致数据丢失，请在操作之前备份好你的U盘数据
 
 </div>
 
 <div class="info">
+
 
 >推荐使用Ventoy，因为Ventoy只需要一次安装到U盘之后就不再需要刻录的操作，还可以跟资料共存
 
@@ -82,17 +101,23 @@ Arch Linux有多个镜像源，在[Arch Linux Downloads](https://archlinux.org/d
 
 ## 重启开始安装
 
-确保您的U盘已经写入了镜像、分区已经确定好没问题之后
-
-~~万事具备，只欠东风~~
-
-重启进入LiveCD
+确保您的U盘已经写入了镜像、分区已经确定好没问题之后，就可以重启进入LiveCD
 
 # LiveCD
 
+## 登录
+
+Artix Linux的LiveCD并不会自动登录，LiveCD的用户名为`artix`密码为`artix`
+
+![](https://pic.lanta.cyou/img/20220409090535.png)
+
+登录之后输入`su`进入root账号
+
+![](https://pic.lanta.cyou/img/2022-04-09_09-06.png)
+
 ## 确保网络畅通
 
-前面提到，Arch Linux是在线安装方式，所以你必须要确保LiveCD中的系统已经连接到了网络
+前面提到，Artix Linux是在线安装方式，所以你必须要确保LiveCD中的系统已经连接到了网络
 
 ### 有线网络
 
@@ -105,7 +130,7 @@ Arch Linux有多个镜像源，在[Arch Linux Downloads](https://archlinux.org/d
 LiveCD中自带连接WiFi的工具，你可以一步一步让Live CD连接到WiFi
 
 ```bash
-[archlinux@archlinux ~]$ iwctl  # 进入 iwd 的交互提示符
+artixlinux:[artix]:$ iwctl  # 进入 iwd 的交互提示符
 [iwd]# device list  # 列出所有 WiFi 设备
 [iwd]# station <device> scan  # 扫描 WiFi 网络
 [iwd]# station <device> connect <ssid>  # 连接到 WiFi 网络
@@ -118,16 +143,10 @@ LiveCD中自带连接WiFi的工具，你可以一步一步让Live CD连接到WiF
 最简单的办法就是用Ping
 
 ```bash
-ping -c 3 archlinux.org
+ping -c 3 artixlinux.org
 ```
 
 没有报错则网络连接正常
-
-## 更改系统时间（可选，但还是建议执行）
-
-```bash
-timedatectl set-ntp true
-```
 
 ## 分区
 
@@ -140,7 +159,6 @@ LiveCD中有`parted`、`fdisk`、`cfdisk`等工具，前两个比较麻烦，`cf
 首先我们要打开cfdisk
 
 <div class="info">
-
 > 设sdX为你的硬盘号
 
 </div>
@@ -156,7 +174,6 @@ cfdisk /dev/sdX # 后面这个就是硬盘设备名
 ### 分区格式
 
 <div class="info">
-
 >  用户资料分区是可选的，可以将用户资料存放在系统盘中
 
 </div>
@@ -171,7 +188,6 @@ cfdisk /dev/sdX # 后面这个就是硬盘设备名
 #### GPT（UEFI引导）推荐分区格式：
 
 <div class="danger">
-
 > 如果你之前已经在硬盘中另外装了其他使用UEFI引导的系统（比如Windows）请务必不要把引导分区删掉重建，否则会导致原来的系统无法进入！
 
 </div>
@@ -185,13 +201,11 @@ cfdisk /dev/sdX # 后面这个就是硬盘设备名
 ## 格式化分区
 
 <div class="danger">
-
 > 如果你之前已经在硬盘中另外装了其他使用UEFI引导的系统（比如Windows）请务必不要把引导分区格式化，否则会导致原来的系统无法进入！
 
 </div>
 
 <div class="info">
-
 > 设引导分区为 /dev/sda1，系统分区为 /dev/sda2
 
 </div>
@@ -201,12 +215,13 @@ mkfs.ext4 /dev/sda2 # 格式化 /dev/sda2 为 ext4 文件系统（系统分区�
 mkfs.vfat /dev/sda1 # 格式化 /dev/sda1 为 FAT32 文件系统（引导分区）
 ```
 
+![](https://pic.lanta.cyou/img/2022-04-09_09-10.png)
+
 ## 挂载分区
 
 ### GPT
 
 <div class="info">
-
 > 设引导分区为 /dev/sda1，系统分区为 /dev/sda2，用户资料分区为/dev/sda3
 
 </div>
@@ -217,6 +232,8 @@ mkdir /mnt/boot /mnt/home # 新建 /mnt/boot 文件夹和 /mnt/home 文件夹
 mount /dev/sda1 /mnt/boot # 挂载引导分区到 /mnt/boot
 mount /dev/sda3 /mnt/home # 挂载用户资料分区到 /mnt/home （ /home 分区，在有用户资料分区的情况下才执行）
 ```
+
+![](https://pic.lanta.cyou/img/2022-04-09_09-11.png)
 
 ### MBR
 
@@ -241,18 +258,18 @@ rm /etc/pacman.d/mirrorlist # 删除原来的软件源列表
 然后重新创建一个软件源列表
 
 ```bash
-vim /etc/pacman.d/mirrorslist # 新建软件源列表
+nano /etc/pacman.d/mirrorslist # 新建软件源列表
 ```
 
 在软件源列表中写入`Server = 地址`即可，这里给大家列几个镜像源
 
-| 名称                                   | 地址 |
-| -------------------------------------- | ---- |
-| [清华大学开源软件镜像站](https://mirrors.tuna.tsinghua.edu.cn) | https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch |
-| [北京外国语大学开源软件镜像站](https://mirrors.bfsu.edu.cn)  | https://mirrors.bfsu.edu.cn/archlinux/$repo/os/$arch         |
-| [中国科学技术大学开源软件镜像](https://mirrors.ustc.edu.cn) | https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch |
+| 名称                                                         | 地址                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [清华大学开源软件镜像站](https://mirrors.tuna.tsinghua.edu.cn) | https://mirrors.tuna.tsinghua.edu.cn/artixlinux/$repo/os/$arch |
+| [腾讯软件源](https://mirrors.cloud.tencent.com/)             | https://mirrors.cloud.tencent.com/artixlinux/$repo/os/$arch  |
+| [阿里巴巴开源镜像站](https://developer.aliyun.com/mirror/)   | https://mirrors.aliyun.com/artixlinux/$repo/os/$arch         |
 
-在上面选择一个镜像源，假如我要用清华的，那就`Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch`
+在上面选择一个镜像源，假如我要用清华的，那就`Server = https://mirrors.tuna.tsinghua.edu.cn/artixlinux/$repo/os/$arch`
 
 保存并退出即可
 
@@ -260,7 +277,7 @@ vim /etc/pacman.d/mirrorslist # 新建软件源列表
 
 ### 内核的选择
 
-下面为Arch Linux官方源中可选的部分内核，可以根据你自己的需求选择
+下面为Artix Linux官方源中可选的部分内核，可以根据你自己的需求选择
 
 | 内核        | 特点                                           |
 | ----------- | ---------------------------------------------- |
@@ -270,18 +287,30 @@ vim /etc/pacman.d/mirrorslist # 新建软件源列表
 
 （以上表格来自[Chi_Tang的博客](https://chitang.tech/posts/arch-guide/#%E5%86%85%E6%A0%B8%E7%9A%84%E9%80%89%E6%8B%A9)）
 
-### 安装命令
+## 安装命令
+
+首先安装runit
 
 ```bash
-pacstrap /mnt base base-devel linux-firmware <linux-kernel> <linux-kernel>-headers grub vim dhcpcd iwd os-prober efibootmgr
+basestrap /mnt base base-devel runit elogind-runit
 ```
 
-将 `<linux-kernel>` 替换为你所选定的内核
+![](https://pic.lanta.cyou/img/2022-04-09_09-12.png)
+
+![](https://pic.lanta.cyou/img/2022-04-09_09-13.png)
+
+然后安装内核
+
+```
+basestrap /mnt <linux-kernel> linux-firmware
+```
+
+![](https://pic.lanta.cyou/img/2022-04-09_09-24.png)
 
 ## 生成分区表
 
 ```bash
-genfstab -U /mnt > /mnt/etc/fstab
+fstabgen -U /mnt >> /mnt/etc/fstab
 ```
 
 可以自己检查一下 `/mnt/etc/fstab` 以确保信息正确无误
@@ -291,14 +320,23 @@ genfstab -U /mnt > /mnt/etc/fstab
 接下来我们要通过**chroot**切换到我们安装好的系统的终端进行初步的系统设置
 
 ```bash
-arch-chroot /mnt
+artix-chroot /mnt
 ```
 
 <div class="info">
 
+
 > 要退出返回LiveCD就直接输入`exit`即可
 
 </div>
+
+切换之后安装一下vim作为文本编辑器
+
+```bash
+pacman -S vim
+```
+
+
 
 ## 设置时区
 
@@ -308,56 +346,6 @@ hwclock --systohc
 ```
 
 `<Region>`和`<City>`分别是你所在的地区和城市，例如上海时间`Asia/Shanghai`
-
-## 设置网络
-
-### 计算机名
-
-```bash
-vim /etc/hostname
-```
-
-在文件中写入你的计算机名，例如 `my-pc-1s-archlinux`
-
-保存并退出
-
-### hosts 文件
-
-```bash
-vim /etc/hosts
-```
-
-在文件中写入下面的内容
-
-```none
-127.0.0.1 localhost
-::1       localhost
-127.0.1.1 <hostname>.localdomain  <hostname>
-```
-
-将 `<hostname>` 替换为你的计算机名，保存并退出
-
-### 安装NetworkManager（可选）
-
-如果进入系统后突然发现系统联网不正常，一般来说装个NetworkManager就能解决
-
-```bash
-pacman -S networkmanager # 安装NetworkManager
-```
-
-安装好之后设置开机自启动
-
-```bash
-systemctl enable NetworkManager # 注意大小写
-```
-
-### 设置dhcpcd开机自启动
-
-dhcpcd为DHCP服务，可以从路由器中自动获取IP，所以我们需要它开机自启动
-
-```bash
-systemctl enable dhcpcd
-```
 
 ## 配置本地化
 
@@ -381,15 +369,29 @@ locale-gen  # 生成本地化文件
 vim /etc/locale.conf
 ```
 
-在文件中加入 `LANG=en_US.UTF-8`，保存并退出
+在文件中加入以下设置
+
+ ```
+ export LANG="en_US.UTF-8"
+ export LC_COLLATE="C"
+ ```
+
+保存并退出
 
 <div class="warning">
+
 
 > 请不要在这里设置任何其他的语言，否则可能会导致终端乱码
 
 </div>
 
 ## 安装引导
+
+### 安装GRUB本体
+
+```bash
+pacman -S grub os-prober efibootmgr
+```
 
 如果你需要GRUB能引导到其他系统（例如Windows）我们要先开启GRUB使用**os-prober**才可以让GRUB引导到其他系统
 
@@ -406,10 +408,11 @@ grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub # �
 grub-mkconfig -o /boot/grub/grub.cfg  # 生成 GRUB 配置
 ```
 
+![](https://pic.lanta.cyou/img/2022-04-09_09-48.png)
+
 ### Legacy + MBR
 
 <div class="info">
-
 > 设sdX为你的硬盘号
 
 </div>
@@ -419,17 +422,72 @@ grub-install --target=i386-pc /dev/sdX  # 在 /dev/sdX 安装引导，不要加�
 grub-mkconfig -o /boot/grub/grub.cfg  # 生成 GRUB 配置
 ```
 
+## 设置网络
+
+### 计算机名
+
+```bash
+vim /etc/hostname
+```
+
+在文件中写入你的计算机名，例如 `my-pc-1s-artixlinux`
+
+保存并退出
+
+### hosts 文件
+
+```bash
+vim /etc/hosts
+```
+
+在文件中写入下面的内容
+
+```none
+127.0.0.1 localhost
+::1       localhost
+127.0.1.1 <hostname>.localdomain  <hostname>
+```
+
+将 `<hostname>` 替换为你的计算机名，保存并退出
+
+### 安装Connman
+
+如果进入系统后突然发现系统联网不正常，一般来说装个Connman就能解决
+
+<div class="info">
+
+> 因为种种原因，NetworkManager可能无法在Artix Linux正常使用，所以我不推荐你使用NetworkManager
+
+</div>
+
+```bash
+pacman -S connman-runit connman-gtk # 安装Connman
+```
+
+将Connman开机自启动
+
+```
+ln -s /etc/runit/sv/connmand /etc/runit/runsvdir/default
+```
+
+![](https://pic.lanta.cyou/img/2022-04-09_11-14.png)
+
+![](https://pic.lanta.cyou/img/2022-04-09_11-22.png)
+
+![](https://pic.lanta.cyou/img/2022-04-09_11-22_1.png)
+
+(Thanks for [Shikikan_Neko08](https://twitter.com/Shikikan_Neko08))
+
 ## 重启前的准备
 
 ```bash
 passwd root # 设置root的密码
-systemctl enable dhcpcd 
-systemctl enable NetworkManager # 如果你安装了NetworkManager才需要执行
 ```
 
 ## 重启
 
 <div class="success">
+
 
 > 到这里，我们的LiveCD的安装步骤就完成了，曙光就在眼前了！接下来我们进入系统进行初步设定
 
@@ -446,6 +504,8 @@ useradd -m -G wheel 用户名
 passwd 用户名
 ```
 
+![](https://pic.lanta.cyou/img/2022-04-09_10-46.png)
+
 ### 将新建的用户设置权限
 
 在终端中运行
@@ -456,6 +516,8 @@ EDITOR=vim visudo
 
 在这个配置文件中找到`%wheel ALL=(ALL:ALL) ALL`，如果前面带个`#`号就给它删掉，保存并退出
 
+![](https://pic.lanta.cyou/img/2022-04-09_10-46_1.png)
+
 ## 设置SWAP（交换文件）
 
 ```bash
@@ -465,11 +527,15 @@ sudo chmod 600 /swapfile
 sudo swapon /swapfile
 ```
 
+![](https://pic.lanta.cyou/img/2022-04-09_10-47.png)
+
 使用vim编辑`/etc/fstab`，在末尾中加入
 
 ```bash
 /swapfile none swap defaults 0 0 # 注意空格
 ```
+
+![](https://pic.lanta.cyou/img/2022-04-09_10-48.png)
 
 ## 设置pacman.conf
 
@@ -481,7 +547,6 @@ sudo vim /etc/pacman.conf
 
 
 <div class="info">
-
 > 这一步是可选的，只是为了让你的pacman更好看
 
 </div>
@@ -492,22 +557,34 @@ sudo vim /etc/pacman.conf
 
 ##  额外软件源
 
-#### multilib
+#### lib32
 
-`multilib` 软件源中包含一些 32 位的依赖包
+`lib32` 软件源中包含一些 32 位的依赖包
 
 滑到文件后面，找到
 
 ```none
-#[multilib]
+#[lib32]
 #Include = /etc/pacman.d/mirrorlist
 ```
 
-去掉这两行前面的 `#` 以启用 `multilib` 软件源
+去掉这两行前面的 `#` 以启用 `lib32` 软件源
+
+![](https://pic.lanta.cyou/img/2022-04-09_10-50.png)
+
+### multilib
+
+为了能使用`multilib`软件源以适配部分Arch Linux软件，你需要安装`artix-archlinux-support`
+
+```bash
+sudo pacman -S artix-archlinux-support
+```
+
+这样就可以使用了
 
 ### Arch Linux CN
 
-`Arch Linux CN` 源中包含许多在国内使用 Linux 常用的软件包，而且软件包下载速度比较快
+Artix Linux是可以偷`Arch Linux CN` 源的，`Arch Linux CN`中包含许多在国内使用 Linux 常用的软件包，而且软件包下载速度比较快
 
 在文件最后面添加下面这两行
 
@@ -516,17 +593,29 @@ sudo vim /etc/pacman.conf
 Server = https://mirrors.bfsu.edu.cn/archlinuxcn/$arch
 ```
 
+![](https://pic.lanta.cyou/img/2022-04-09_10-50_1.png)
+
 保存并退出后更新软件源
 
 ```bash
 sudo pacman -Sy
 ```
 
+![](https://pic.lanta.cyou/img/2022-04-09_11-06.png)
+
 安装 `archlinuxcn-keyring`
 
 ```bash
 sudo pacman -S archlinuxcn-keyring
 ```
+
+![](https://pic.lanta.cyou/img/2022-04-09_11-16.png)
+
+如果安装`archlinuxcn-keyring`出现了以下错误
+
+![](https://pic.lanta.cyou/img/2022-04-09_11-16_1.png)
+
+那么往下看本文章末尾的疑难解答
 
 ## AUR 
 
@@ -553,6 +642,19 @@ yay -S fcitx5-pinyin-moegirl # 萌娘百科词库（二刺螈词库）
 
 </div>
 
+如果出现了这个
+
+![](https://pic.lanta.cyou/img/2022-04-09_11-31.png)
+
+那么可以尝试安装`fcitx5-git`
+
+![](https://pic.lanta.cyou/img/2022-04-09_11-32.png)
+
+安装好之后就可以继续了
+
+![](https://pic.lanta.cyou/img/2022-04-09_11-35.png)
+
+
 ### 设置环境变量
 
 ```bash
@@ -572,6 +674,7 @@ export SDL_IM_MODULE=fcitx
 
 <div class="info">
 
+
 > Fcitx5输入法需要进入图形界面的“设置”中才能进一步地设置Fcitx5
 
 </div>
@@ -581,9 +684,10 @@ export SDL_IM_MODULE=fcitx
 安装下面几个字体以让中文能正常显示
 
 ```bash
-sudo pacman -S wqy-microhei # 文泉驿
-sudo pacman -S adobe-source-sans-fonts  # 思源黑体
+sudo pacman -S noto-fonts noto-fonts-emoji noto-fonts-extra #Noto Sans
 ```
+
+![](https://pic.lanta.cyou/img/2022-04-09_11-39.png)
 
 # 图形界面
 
@@ -591,13 +695,13 @@ sudo pacman -S adobe-source-sans-fonts  # 思源黑体
 
 <div class="info">
 
+
 > 部分显卡驱动需要启用mutilib源（问题不大，我们前面已经启用了）
 > 还有一些带有<sup>AUR</sup>的就是来自AUR的软件包，前面我们已经安装了yay所以问题不大
 
 </div>
 
 <div class="info">
-
 > 以下资料整理来自[Chi_Tang的博客](https://chitang.tech/posts/arch-guide/)
 
 </div>
@@ -674,15 +778,18 @@ sudo pacman -S pocl # OpenCL 支持
 
 ## 图形桌面
 
-常见的图形桌面有以下几种
+常见的图形桌面且能安装在Artix Linux有以下两种
 
 | 名称                                                         | 官方预览图                                                   |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [KDE Plasma](https://chitang.tech/posts/arch-guide/#kde-plasma) | ![KDE Plasma](https://kde.org/content/plasma-desktop/plasma-widgets.png) |
-| [GNOME](https://chitang.tech/posts/arch-guide/#gnome)        | ![GNOME](https://www.gnome.org/wp-content/uploads/2021/03/wgo-splash-40.png) |
 | [Xfce 4](https://chitang.tech/posts/arch-guide/#xfce)        | ![Xfce 4](https://cdn.xfce.org/about/screenshots/4.16-1.png) |
 
-还有一种就是[深度](https://www.deepin.org)的DDE（深度桌面环境），我不推荐你使用，深度的桌面环境在其他系统会有很多的Bug
+<div class="info">
+
+> GNOME因为需要依赖`systemd`所以无法使用
+
+</div>
 
 我推荐你使用KDE Plasma，比较简洁美观
 
@@ -693,14 +800,6 @@ sudo pacman -S plasma kde-applications
 ```
 
 `kde-applications` 是可选的，其中包含 KDE 的其他应用
-
-#### GNOME
-
-```bash
-sudo pacman -S gnome gnome-extra
-```
-
-`gnome-extra` 是可选的，其中包含 GNOME 的其他应用
 
 #### XFCE
 
@@ -719,53 +818,83 @@ sudo pacman -S xfce4 xfce4-goodies
 推荐与 [KDE Plasma](https://chitang.tech/posts/arch-guide/#kde-plasma) 配合使用
 
 ```bash
-sudo pacman -S sddm
-sudo systemctl enable sddm
+sudo pacman -S sddm-runit # 给runit使用的sddm
 ```
 
-#### GDM
-
-推荐与 [GNOME](https://chitang.tech/posts/arch-guide/#gnome) 配合使用
+然后设置开机启动SDDM
 
 ```bash
-sudo pacman -S gdm
-sudo systemctl enable gdm
+ln -s /etc/runit/sv/sddm /run/runit/sddm
 ```
 
-#### LXDM
+(Thanks for [Shikikan_Neko08](https://twitter.com/Shikikan_Neko08))
+
+# 疑难解答
+
+## 如何设置开机自启动（systemctl command not found）
+
+前面说到，Artix Linux是没有systemd的，所以不能使用常规的方式开机自启动
+
+以下命令适用于runit内核
 
 ```bash
-sudo pacman -S lxdm
-sudo systemctl enable lxdm
+ln -s /<service-location/. /etc/runit/sv
 ```
 
-#### LightDM
+不行的话试试下面这个
 
 ```bash
-sudo pacman -S lightdm
-sudo systemctl enable lightdm
+ln -s /<service-location> /run/runit/<service>
 ```
 
-# 常用软件和工具
+<div class="info">
 
-下面给大家讲几个常用的软件和工具
+> <service-location>为应用路径，不知道的自己搜就是
 
-> 这里注意一下，带有**<sup>AUR</sup>**的就是来自**AUR源**的软件，如果你先前没有安装yay请翻回目录中安装
+</div>
 
-## 通讯软件
+## Grub没有引导项（Grub only have UEFI Firmware Settings）
 
-| 名称                                  | 包名                   | 备注                                              |
-| ------------------------------------- | ---------------------- | ------------------------------------------------- |
-| TIM（From Spark Store）<sup>AUR</sup> | aur/com.qq.tim.spark   | 来自Spark的基于Deepin Wine5 下运行的TIM，较为稳定 |
-| 微信<sup>AUR</sup>                    | aur/com.tencent.weixin | 微信官方原生Linux桌面版                           |
-| Telegram                              | telegram-desktop       | Telegram官方客户端                                |
+如果你出现了安装完重启后Grub没有引导项的情况（如图）
 
-另外QQ还有个第三方开发者基于Electron开发的[Icaligua](https://github.com/Ansbot/Icalingua)<sup>AUR</sup>，目前功能已经较为完善，现在已经可以在AUR源中安装
+![](https://pic.lanta.cyou/img/2022-04-09_10-27.png)
+
+出现这种情况可以尝试重新安装内核（因为可能是`vmlinuz`和`initrd.img`不见了）
 
 ```bash
-yay -S icaligua
+basestrap /mnt <linux-kernel> linux-firmware
 ```
 
-# 结尾
+重新安装后查看`/mnt/boot`是否有`vmlinuz-linux`文件，如果有，就成功了
 
-最后，ArchLinux的安装就大功告成了，剩下的就由你慢慢探索了，祝你旅途愉快
+![](https://pic.lanta.cyou/img/20220409103355.png)
+
+然后`artix-chroot /mnt`，重新生成Grub配置文件
+
+```bash
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+![](https://pic.lanta.cyou/img/20220409103702.png)
+
+重启后应该就能恢复正常了
+
+![](https://pic.lanta.cyou/img/2022-04-09_10-44.png)
+
+## archlinuxcn-keyring: signature from "farseerfc <farseerfc@archlinuxcn.org>" is unknown trust 
+
+如果出现了以下错误就是Artix Linux不信任ArchLinuxCN的密钥
+
+那么你可以尝试让Artix Linux不检查密钥
+
+```
+vim /etc/pacman.conf
+```
+
+将`SigLevel`改为`Never`
+
+![](https://pic.lanta.cyou/img/2022-04-09_11-21.png)
+
+再次安装就正常了
+
+![](https://pic.lanta.cyou/img/2022-04-09_11-21_1.png)

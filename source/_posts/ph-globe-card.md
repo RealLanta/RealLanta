@@ -1,5 +1,5 @@
 ---
-title: ph-globe-card
+title: 淘宝搜一下6块钱就能搞到的菲律宾Globe电话卡
 date: 2022-04-08 19:36:49
 tags: 境外电话卡
 categories: 体验
@@ -7,7 +7,7 @@ categories: 体验
 
 # 前言
 
-前阵子看到了这个视频
+前阵子刷YT的时候看到了这个视频
 
 [【什么值得捡008】6 块钱的菲律宾 Globe 手机卡，订阅 Spotify 会员每月只要 4 元？最划算的 Spotify 声破天订阅教程](https://www.youtube.com/watch?v=GyNXwq52qSw&t=2s)
 
