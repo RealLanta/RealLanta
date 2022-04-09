@@ -692,9 +692,12 @@ export SDL_IM_MODULE=fcitx
 
 ```bash
 sudo pacman -S noto-fonts noto-fonts-emoji noto-fonts-extra #Noto Sans
+yay -S wqy-microhei-nightly_build # 文泉驿
 ```
 
 ![](https://pic.lanta.cyou/img/2022-04-09_11-39.png)
+
+![](https://pic.lanta.cyou/img/2022-04-09_14-23.png)
 
 # 图形界面
 
