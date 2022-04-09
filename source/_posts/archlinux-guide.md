@@ -273,7 +273,7 @@ vim /etc/pacman.d/mirrorslist # 新建软件源列表
 ### 安装命令
 
 ```bash
-pacstrap /mnt base base-devel linux-firmware <linux-kernel> <linux-kernel>-headers grub vim dhcpcd iwd os-prober efibootmgr
+pacstrap /mnt base base-devel linux-firmware <linux-kernel> <linux-kernel>-headers grub vim networkmanager iwd os-prober efibootmgr
 ```
 
 将 `<linux-kernel>` 替换为你所选定的内核
@@ -336,28 +336,6 @@ vim /etc/hosts
 ```
 
 将 `<hostname>` 替换为你的计算机名，保存并退出
-
-### 安装NetworkManager（可选）
-
-如果进入系统后突然发现系统联网不正常，一般来说装个NetworkManager就能解决
-
-```bash
-pacman -S networkmanager # 安装NetworkManager
-```
-
-安装好之后设置开机自启动
-
-```bash
-systemctl enable NetworkManager # 注意大小写
-```
-
-### 设置dhcpcd开机自启动
-
-dhcpcd为DHCP服务，可以从路由器中自动获取IP，所以我们需要它开机自启动
-
-```bash
-systemctl enable dhcpcd
-```
 
 ## 配置本地化
 
@@ -423,8 +401,7 @@ grub-mkconfig -o /boot/grub/grub.cfg  # 生成 GRUB 配置
 
 ```bash
 passwd root # 设置root的密码
-systemctl enable dhcpcd 
-systemctl enable NetworkManager # 如果你安装了NetworkManager才需要执行
+systemctl enable NetworkManager # 让NetworkManager开机启动，注意大小写
 ```
 
 ## 重启
