@@ -904,3 +904,7 @@ vim /etc/pacman.conf
 再次安装就正常了
 
 ![](https://pic.lanta.cyou/img/2022-04-09_11-21_1.png)
+
+## SDDM无法启动
+
+如果你遇到了sddm无法启动的问题，可以尝试重装`sddm`、`sddm-runit`、`elogind`和Plasma桌面环境
