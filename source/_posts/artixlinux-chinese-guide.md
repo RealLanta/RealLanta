@@ -554,6 +554,7 @@ sudo vim /etc/pacman.conf
 
 
 <div class="info">
+
 > 这一步是可选的，只是为了让你的pacman更好看
 
 </div>
