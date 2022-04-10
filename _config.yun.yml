@@ -134,7 +134,7 @@ social:
     icon: icon-rss-line
     color: orange
   - name: Twitter
-    link: https://twitter.com/DP8_Lanta
+    link: https://twitter.com/home_lanta
     icon: icon-twitter-line
     color: "#1da1f2"  
   - name: GitHub
@@ -145,8 +145,8 @@ social:
     link: mailto:me@lanta.cyou
     icon: icon-mail-line
     color: "#8E71C1"
-  - name: Telegram
-    link: https://t.me/lanta_official
+  - name: Telegram Channel
+    link: https://t.me/lanta_channel
     icon: icon-telegram-line
     color: "#0088CC"
   - name: Video Station
