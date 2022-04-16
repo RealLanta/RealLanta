@@ -873,7 +873,7 @@ ln -s /<service-location> /run/runit/<service>
 
 <div class="info">
 
-> <service-location>为应用路径，不知道的自己搜就是
+> service-location为应用路径，不知道的自己搜就是
 
 </div>
 
