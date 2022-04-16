@@ -123,7 +123,7 @@ Artix Linux的LiveCD并不会自动登录，LiveCD的用户名为`artix`密码�
 
 如果你是有线网络，大概率不需要担心网络问题，因为LiveCD已经通过DHCP服务自动联网
 
-不过发现网络出现玄学问题，你可以执行`systemctl restart dhcpcd`来重启DHCP服务让Live CD重新获取IP
+不过发现网络出现玄学问题，你可以执行`sv restart dhcpcd`来重启DHCP服务让Live CD重新获取IP
 
 ### WiFi连接
 
