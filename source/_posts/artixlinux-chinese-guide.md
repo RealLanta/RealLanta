@@ -785,19 +785,12 @@ paru -S vulkan-amdgpu-pro # Vulkan 支持
 sudo pacman -S xorg-drivers
 sudo pacman -S mesa # OpenGL 支持
 sudo pacman -S lib32-mesa # 32 位 OpenGL 支持
-sudo pacman -S pocl # OpenCL 支持
 ```
 
-## 安装Xorg和Xorg Server
-
-因为某些原因，如果要在Artix Linux使用桌面环境推荐安装Xorg和Xorg Server两个一起安装
+## 安装Xorg
 
 ```bash
 sudo pacman -S xorg
-```
-
-```bash
-sudo pacman -S xorg-server
 ```
 
 ## 图形桌面
@@ -848,7 +841,7 @@ sudo pacman -S sddm-runit # 给runit使用的sddm
 然后设置开机启动SDDM
 
 ```bash
-ln -s /etc/runit/sv/sddm /run/runit/sddm
+ln -s /etc/runit/sv/sddm/run /run/runit/sddm
 ```
 
 (Thanks for [Shikikan_Neko08](https://twitter.com/Shikikan_Neko08))
