@@ -255,19 +255,11 @@ mount /dev/sda2 /mnt/home # 挂载用户资料分区到 /mnt/home( /home 分区�
 
 接下来我们需要更新一下镜像源以加快我们的下载速度
 
-因为自带的源列表又臭又长，你可以**删掉重建**
-
 ```bash
-rm /etc/pacman.d/mirrorlist # 删除原来的软件源列表
+nano /etc/pacman.d/mirrorlist # 新建软件源列表
 ```
 
-然后重新创建一个软件源列表
-
-```bash
-nano /etc/pacman.d/mirrorslist # 新建软件源列表
-```
-
-在软件源列表中写入`Server = 地址`即可，这里给大家列几个镜像源
+在软件源列表中第一行写入`Server = 地址`即可，这里给大家列几个镜像源
 
 | 名称                                                         | 地址                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -276,6 +268,8 @@ nano /etc/pacman.d/mirrorslist # 新建软件源列表
 | [阿里巴巴开源镜像站](https://developer.aliyun.com/mirror/)   | https://mirrors.aliyun.com/artixlinux/$repo/os/$arch         |
 
 在上面选择一个镜像源，假如我要用清华的，那就`Server = https://mirrors.tuna.tsinghua.edu.cn/artixlinux/$repo/os/$arch`
+
+当然如果速度还是上不去可以尝试删除其他镜像源
 
 保存并退出即可
 
@@ -580,13 +574,19 @@ sudo vim /etc/pacman.conf
 
 ![](https://pic.lanta.cyou/img/2022-04-09_10-50.png)
 
-### multilib
+### Arch Linux Source
 
-为了能使用`multilib`软件源以适配部分Arch Linux软件，你需要安装`artix-archlinux-support`
+为了能使用Arch Linux的软件源（如`multilib`）以适配部分Arch Linux软件，你需要安装`artix-archlinux-support`
 
 ```bash
 sudo pacman -S artix-archlinux-support
 ```
+
+然后让它信任Arch Linux的密钥
+
+~~~bash
+sudo pacman-key --populate archlinux
+~~~
 
 这样就可以使用了
 
@@ -640,7 +640,7 @@ sudo pacman -S yay
 ```bash
 sudo pacman -S fcitx5-im # Fcitx5本体组
 sudo pacman -S fcitx5-chinese-addons # 中文输入引擎
-sudo pacman -S fcitx5-pinyin-zhwiki # 中文维基百科词库
+yay -S fcitx5-pinyin-zhwiki-rime # 中文维基百科词库
 yay -S fcitx5-pinyin-moegirl # 萌娘百科词库（二刺螈词库）
 ```
 
