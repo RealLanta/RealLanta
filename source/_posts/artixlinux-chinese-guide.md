@@ -10,6 +10,12 @@ categories: 教程
 
 <div class="info">
 
+> 本教程最后更新时间2022年4月22日
+
+</div>
+
+<div class="info">
+
 >Thanks a lot for [Shikikan_Neko08](https://twitter.com/Shikikan_Neko08)
 >
 >He helped me solve a lot of problems during the install Artix Linux process
@@ -841,7 +847,7 @@ sudo pacman -S sddm-runit # 给runit使用的sddm
 然后设置开机启动SDDM
 
 ```bash
-ln -s /etc/runit/sv/sddm/run /run/runit/sddm
+ln -s /etc/runit/sv/sddm /run/runit/service/sddm
 ```
 
 (Thanks for [Shikikan_Neko08](https://twitter.com/Shikikan_Neko08))
@@ -855,7 +861,7 @@ ln -s /etc/runit/sv/sddm/run /run/runit/sddm
 以下命令适用于runit内核
 
 ```bash
-ln -s /<service-location/. /etc/runit/sv
+ln -s /<service-location/. /etc/runit/service
 ```
 
 不行的话试试下面这个
