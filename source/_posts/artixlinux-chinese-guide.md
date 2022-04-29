@@ -457,13 +457,25 @@ vim /etc/hosts
 
 将 `<hostname>` 替换为你的计算机名，保存并退出
 
-### 安装Connman
+### 安装NetworkManager或Connman
 
-如果进入系统后突然发现系统联网不正常，一般来说装个Connman就能解决
+如果进入系统后突然发现系统联网不正常，一般来说装个NetworkManager或Connman就能解决
+
+```bash
+pacman -S networkmanager
+```
+
+```bash
+ln -s /etc/runit/sv/networkmanager /etc/runit/runsvdir/default
+```
+
+
 
 <div class="info">
 
-> 因为种种原因，NetworkManager可能无法在Artix Linux正常使用，所以我不推荐你使用NetworkManager
+> 一般情况下我推荐你用NetworkManager
+>
+> 如果NetworkManager不起作用可以尝试Connman
 
 </div>
 
@@ -473,8 +485,8 @@ pacman -S connman-runit connman-gtk # 安装Connman
 
 将Connman开机自启动
 
-```
-ln -s /etc/runit/sv/connmand /etc/runit/runsvdir/default
+```bash
+ln -s /etc/runit/sv/NetworkManager /etc/runit/runsvdir/default
 ```
 
 ![](https://pic.lanta.cyou/img/2022-04-09_11-14.png)
@@ -856,12 +868,12 @@ ln -s /etc/runit/sv/sddm /run/runit/service/sddm
 
 ## 如何设置开机自启动（systemctl command not found）
 
-前面说到，Artix Linux是没有systemd的，所以不能使用常规的方式开机自启动
+前面说到，Artix Linux是没有systemd的，所以不能使用systemd的方式开机自启动
 
 以下命令适用于runit内核
 
 ```bash
-ln -s /<service-location/. /etc/runit/service
+ln -s /<service-location/ /etc/runit/service
 ```
 
 不行的话试试下面这个
