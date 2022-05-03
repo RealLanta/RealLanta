@@ -27,8 +27,8 @@ banner:
 # 背景设置
 bg_image:
   enable: true
-  url: https://pic.lanta.cyou/img/94174899_p0.jpg
-  dark: https://pic.lanta.cyou/img/95287340_p0.png
+  url: https://pic.lanta.cyou/img/88305848_p0.jpg
+  dark: https://pic.lanta.cyou/img/85980687_p0.jpg
   opacity: 0.8
 
 # 亮暗模式
