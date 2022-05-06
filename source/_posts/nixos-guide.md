@@ -318,7 +318,7 @@ vim /mnt/etc/nixos/configuration.nix
 
 #### 使用NetworkManager联网
 
-![image-20220506101716110](/home/lanta/.config/Typora/typora-user-images/image-20220506101716110.png)
+![](https://pic.lanta.cyou/img/屏幕截图 2022-05-06 104115.png)
 
 #### 设置中文
 
