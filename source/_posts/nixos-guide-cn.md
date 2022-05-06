@@ -158,9 +158,7 @@ NixOS跟其他Linux发行版最大的不同就是，NixOS 的配置是可复现�
 
 </div>
 
-<div class="info">
-
-
+<div class="warning">
 
 >警告：Ventoy 的硬件支持比较有限。在使用 Ventoy 前，需先阅读其官网的文档，以了解硬件支持情况
 
@@ -402,7 +400,7 @@ mount /dev/sda2 /mnt/home # 挂载用户资料分区到 /mnt/home( /home 分区�
 
 ### 生成配置文件
 
-```l
+```bash
  # nixos-generate-config --root /mnt
 ```
 
@@ -434,7 +432,7 @@ vim /mnt/etc/nixos/configuration.nix
 
 #### 安装NotoFonts字体以显示中文和其他特殊字符
 
-```
+```nix
   fonts.fonts = with pkgs; [
     noto-fonts
     noto-fonts-cjk
@@ -469,7 +467,7 @@ vim /mnt/etc/nixos/configuration.nix
 
 #### 设置中文
 
-```
+```nix
   i18n.defaultLocale = "zh_CN.UTF-8";
   i18n.inputMethod.enabled = "fcitx5";
   i18n.inputMethod.fcitx5.addons = with pkgs; [ fcitx5-rime ];
@@ -484,9 +482,13 @@ vim /mnt/etc/nixos/configuration.nix
 
 如果你使用的是Plasma，那么生成配置文件的时候会自动帮你设置好Plasma，Gnome用户同理。这里以 KDE Plasma 和 GNU GNOME 为例：
 
-> 警告：在 NixOS 上，无法同时启用 GNOME 和 KDE Plasma。
+<div class="warning">
 
-```
+> 警告：在 NixOS 上，无法同时启用 GNOME 和 KDE Plasma。
+ 
+</div>
+
+```nix
   # 如果要使用 GNOME：
   services.xserver.enable = true;
   services.xserver.displayManager.gdm.enable = true;
@@ -582,8 +584,12 @@ hardware.opengl.extraPackages = [
 
 #### 使用 NVIDIA 显卡：
 
+<div class="warning">
+
 > 警告：如果你正在为 Linux 选购硬件，除非特殊需要，请避免使用由 NVIDIA，Realtek，Broadcom 以及 Apple Inc 生产的设备。在这些公司所生产的硬件设备上部署 Linux 可能会非常棘手。
 
+</div>
+ 
 ```nix
   services.xserver.videoDrivers = [ "nvidia" ];
 ```
@@ -652,7 +658,7 @@ flatpak update
 
 #### 使用 Docker：
 
-```
+```nix
   virtualisation.docker.enable = true;
 ```
 
@@ -662,13 +668,13 @@ flatpak update
 
 可使用 `boot.kernelPackages` 选项来指定 NixOS 使用的内核。例如：使用 `linux-zen`
 
-```
+```nix
   boot.kernelPackages = pkgs.linuxPackages_zen;
 ```
 
 #### 使用中国的 Nix 二进制源
 
-``` 
+```nix
   nix.settings.substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];
 ```
 
@@ -685,8 +691,6 @@ nixos-install --root /mnt
 
 <div class="success">
 
-
-
-> 到这里，我们的LiveCD的安装步骤就完成了，曙光就在眼前了！接下来我们就进入NixOS了！
+> 到这里，我们的LiveCD的安装步骤就完成了，曙光就在眼前了！接下来我们重启就可以进入你配置好的NixOS
 
 </div>
