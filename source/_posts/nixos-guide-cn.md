@@ -1,13 +1,19 @@
 ---
 title: 比Arch更好？一个配置文件就能在各个电脑装一模一样的系统和软件？——保姆级教你轻松掌握NixOS
+author: 
+ - Lanta
+ - 一穂灯花
+ - NixOS Chinese Community
 date: 2022-05-06 09:15:59
 tags: 
  - NixOS
  - Linux
 categories: 体验
+
 ---
 
 <div class="info">
+
 
 >非常感谢[一穂灯花](https://github.com/YisuiDenghua)在我安装NixOS中提供的帮助，以完成我对NixOS的学习和本文章的创作
 
@@ -15,9 +21,11 @@ categories: 体验
 
 
 # NixOS 适合我吗？
->「如果你不需要 Ubuntu 那种的开箱即用的，觉得 Arch 那样的自己动手可以接受，喜欢 Gentoo 的可配置性，又不想自己完全编译整个世界，并且觉得所有系统配置全都由统一格式写出来的可复现性确实很棒，并且觉得那帮人为了 portable 和轻量级，自己做了个 Nix 语言可以接受的话，NixOS 可能就是专门为你设计的。」—— [Dramforever](https://github.com/dramforever)
+
+>「如果你不需要 Ubuntu 那种的开箱即用的，觉得 Arch 那样的自己动手可以接受，喜欢 Gentoo 的可配置性，又不想自己完全编译整个世界，并且觉得所有系统配置全都由统一格式写出来的可复现性确实很棒，并且觉得那帮人为了 portable 和轻量级，自己做了个 Nix 语言可以接受的话，NixOS 可能就是专门为你设计的。」—— [Dramforever](https://github.com/dramforever)，NixOS 中文社区管理员之一
 
 # 前排提示
+
 由于 NixOS 系统的配置，操作方式和传统的 Linux 发行版有很大不同，建议新手在先在虚拟机中试用 NixOS，等到熟悉了之后，将 configuration.nix 等配置文件导出，而后能够在宿主机上使用相同的配置复现出一个一样的 NixOS。
 
 在安装的时候，建议新人阅读 NixOS 自带的手册 NixOS Manual，以及在 [search.nixos.org](search.nixos.org) 上查询软件包名（Packages）和配置语句（Options）
@@ -38,14 +46,15 @@ NixOS 非常不同，如果你想安装软件，有多种安装方式，这里�
 
 <div class="info">
 
+
 >安装在`configuration.nix`的软件就是构建在系统里面了，而且因为在配置文件里面，下次你要安装NixOS到其他电脑，只要用这个配置文件（可能需要稍微修改一下）就可以轻松安装NixOS顺便安装你需要的软件了
 >
 >比如说我需要装git，把 git 写进`configuration.nix`
 >
 >```nix
->  environment.systemPackages = with pkgs; [ 
->    git
->  ];  
+>environment.systemPackages = with pkgs; [ 
+>git
+>];  
 >```
 >
 >然后 `nixos-rebuild boot`重启就可以安装完成
@@ -55,6 +64,7 @@ NixOS 非常不同，如果你想安装软件，有多种安装方式，这里�
 </div>
 
 <div class="warning">
+
 
 >需要注意的是，有一些软件的开源协议是**不自由**的，所以NixOS会阻止你的安装操作
 >
@@ -70,6 +80,7 @@ NixOS 非常不同，如果你想安装软件，有多种安装方式，这里�
 
 <div class="info">
 
+
 >`nix-shell`的安装是临时使用，比如我要临时用一下git，那就`nix-shell -p git`
 >
 >随后，你会进入一个 nix-shell，在这个 nix-shell 当中，你可以使用 git。当你用 `exit`退出 nix-shell 之后，git 就不再可用。
@@ -80,6 +91,7 @@ NixOS 非常不同，如果你想安装软件，有多种安装方式，这里�
 
 <div class="info">
 
+
 > 这种不需要 sudo，也不需要重构，它是把软件安装在用户的目录下
 >
 > 缺点是，这种方式安装的软件不能被 configuration.nix 记录，也不能被其他用户使用
@@ -88,23 +100,23 @@ NixOS 非常不同，如果你想安装软件，有多种安装方式，这里�
 
 </div>
 
-## One config use anywhere
+## NixOS 的配置是可复现的
 
-NixOS跟其他Linux发行版最大的不同就是几乎所有的系统设置都在`configuration.nix`
+NixOS跟其他Linux发行版最大的不同就是，NixOS 的配置是可复现的。几乎所有的系统设置都在`configuration.nix`
 
-比如说添加用户、安装的软件、字体、网络、系统引导、桌面环境，全部包含在了这么一个文件里面。而不是像其他发行版那样，配置文件散落在系统各处。
+例如，添加用户、安装的软件、字体、网络、系统引导、桌面环境，全部包含在了这么一个文件里面。而不是像其他发行版那样，配置文件散落在系统各处。
 
 也就是说，只要你在`configuration.nix`配置好之后，下次你需要安装到其他电脑只要再用这个配置文件然后`nixos-install`就可以得到一模一样的NixOS。
 
-同理，如果你去Github下载别人的`configuration.nix`，你可以得到跟他一模一样的NixOS
+同理，如果你去Github下载别人的`configuration.nix`，你可以得到跟他们一模一样的NixOS
 
-如果你NixOS被你玩死了，只要你的配置文件还在，可以进Live CD，那么只要`nixos-rebuild`就可以回到之前的样子
 
->  我的[`configuration.nix`](https://github.com/RealLanta/nixos-config)
+
+>  笔者的[`configuration.nix`](https://github.com/RealLanta/nixos-config)
 
 # 准备操作
 
-首先你需要确保你的网络畅通，NixOS是**在线安装**
+首先你需要确保你的网络畅通，NixOS是**在线安装**。也就是说，安装的过程需要保持网络连接。
 
 ## 下载LiveCD
 
@@ -113,6 +125,7 @@ NixOS跟其他Linux发行版最大的不同就是几乎所有的系统设置都�
 ![](https://pic.lanta.cyou/img/2022-05-06_09-47.png)
 
 <div class="warning">
+
 
 >请尽量下载较新的版本
 
@@ -129,11 +142,13 @@ NixOS跟其他Linux发行版最大的不同就是几乎所有的系统设置都�
 <div class="danger">
 
 
+
 > 刻录到U盘会导致数据丢失，请在操作之前备份好你的U盘数据
 
 </div>
 
 <div class="info">
+
 
 
 >警告：Ventoy 的硬件支持比较有限。在使用 Ventoy 前，需先阅读其官网的文档，以了解硬件支持情况
@@ -240,6 +255,8 @@ OK
 
 现在，你可以通过输入 `quit`来离开`wpa_cli`。
 
+
+
 > 提示：如果你想要在另一台机器上远程安装，你可以在联网之后，使用`systemctl start sshd` 激活 OpenSSH 守护程序 。另外，你还必须使用 `passwd` 为 root 用户或 nixos （livecd 的默认用户）设置密码。
 
 ## 分区
@@ -255,6 +272,7 @@ LiveCD中有`parted`、`fdisk`、`cfdisk`等工具，前两个比较麻烦，`cf
 首先我们要打开cfdisk
 
 <div class="info">
+
 
 
 > 设sdX为你的硬盘号
@@ -274,6 +292,7 @@ cfdisk /dev/sdX # 后面这个就是硬盘设备名
 <div class="info">
 
 
+
 >  用户资料分区是可选的，可以将用户资料存放在系统盘中
 
 </div>
@@ -290,11 +309,13 @@ cfdisk /dev/sdX # 后面这个就是硬盘设备名
 <div class="danger">
 
 
+
 > 如果你之前已经在硬盘中另外装了其他使用UEFI引导的系统（比如Windows）请务必不要把引导分区删掉重建，否则会导致原来的系统无法进入！
 
 </div>
 
 <div class="danger">
+
 
 
 > 因为某些机制的原因，请记得在`cfdisk`中把引导分区的“类型”(Type)改为"EFI System"
@@ -310,7 +331,7 @@ cfdisk /dev/sdX # 后面这个就是硬盘设备名
 > 提示：如果你选择将 EFI 引导分区挂载到不是 `/boot` 的挂载点，例如 `/efi`，你还需要在接下来编辑 `configuration.nix` 的时候写入
 >
 > ```
->   boot.loader.efi.efiSysMountPoint = "/efi";
+> boot.loader.efi.efiSysMountPoint = "/efi";
 > 
 > ```
 >
@@ -321,11 +342,13 @@ cfdisk /dev/sdX # 后面这个就是硬盘设备名
 <div class="danger">
 
 
+
 > 如果你之前已经在硬盘中另外装了其他使用UEFI引导的系统（比如Windows）请务必不要把引导分区格式化，否则会导致原来的系统无法进入！
 
 </div>
 
 <div class="info">
+
 
 
 > 设引导分区为 /dev/sda1，系统分区为 /dev/sda2
@@ -342,6 +365,7 @@ mkfs.vfat /dev/sda1 # 格式化 /dev/sda1 为 FAT32 文件系统（引导分区�
 ### GPT
 
 <div class="info">
+
 
 
 > 设引导分区为 /dev/sda1，系统分区为 /dev/sda2，用户资料分区为/dev/sda3
@@ -471,7 +495,8 @@ vim /mnt/etc/nixos/configuration.nix
 > 提示：如果想要启用 Plasma 的 Qt 缩放，你还需要添加一条语句：
 >
 > ```   services.xserver.desktopManager.plasma5.useQtScaling = **true**;
->    services.xserver.desktopManager.plasma5.useQtScaling = true;
+> services.xserver.desktopManager.plasma5.useQtScaling = true;
+> ```
 
 ![](https://pic.lanta.cyou/img/2022-05-06_10-20.png)
 
@@ -602,7 +627,7 @@ hardware.opengl.extraPackages = [
 > 提示：如果你使用非 GNOME 的桌面环境，你还需要配置
 >
 > ```nix
->   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+> xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 > ```
 
 在启用 flatpak 之后，需要导入 flathub 源：
@@ -619,6 +644,7 @@ flatpak update
 ```
 
 此外，你还需要将用户加入 "docker" 用户组
+
 #### 使用其他 Linux 内核：
 
 可使用 `boot.kernelPackages` 选项来指定 NixOS 使用的内核。例如：使用 `linux-zen`
@@ -626,6 +652,7 @@ flatpak update
 ```
   boot.kernelPackages = pkgs.linuxPackages_zen;
 ```
+
 #### 使用中国的 Nix 二进制源
 
 ``` 
@@ -644,6 +671,7 @@ nixos-install --root /mnt
 ## 重启
 
 <div class="success">
+
 
 
 > 到这里，我们的LiveCD的安装步骤就完成了，曙光就在眼前了！接下来我们就进入NixOS了！
