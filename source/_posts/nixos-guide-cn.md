@@ -203,9 +203,7 @@ nix-channel --update
 
 进入终端后你会发现NixOS默认登录的不是root账户，首先你需要登录到root账户才能继续
 
-但是默认root账户是没有密码的，所以我们需要设置一个
-
-![](https://pic.lanta.cyou/img/2022-05-06_09-59.png)
+打开终端，输入`sudo -i`即可进入root账户
 
 ## 确保网络畅通
 
