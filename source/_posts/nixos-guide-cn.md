@@ -13,7 +13,7 @@ categories: 体验
 ---
 
 <h1 align="center">
-  <img src="https://pic.lanta.cyou/img/nix-snowflake.svg" width="400">
+  <img src="https://pic.lanta.cyou/img/nix-snowflake.svg" width="200">
   <br>NixOS<br>
 </h1>
 
