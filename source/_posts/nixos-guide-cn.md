@@ -594,7 +594,7 @@ hardware.opengl.extraPackages = [
   services.xserver.videoDrivers = [ "nvidia" ];
 ```
 
-<div class="warning">
+<div class="info">
 
 > 提示：由于 NVIDIA 的驱动是非自由软件，你同时还需要在配置文件中使用 `  nixpkgs.config.allowUnfree = true;`启用非自由软件
  
@@ -677,9 +677,6 @@ flatpak update
 ```nix
   nix.settings.substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];
 ```
-
-
-
 
 ### 安装 NixOS：
 
