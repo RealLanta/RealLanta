@@ -12,6 +12,11 @@ categories: 体验
 
 ---
 
+<h1 align="center">
+  <img src="https://pic.lanta.cyou/img/nix-snowflake.svg" width="400">
+  <br>NixOS<br>
+</h1>
+
 <div class="info">
 
 
@@ -76,7 +81,7 @@ NixOS 非常不同，如果你想安装软件，有多种安装方式，这里�
 
 </div>
 
-2.`nixos-shell`临时使用
+2.`nix-shell`临时使用
 
 <div class="info">
 
@@ -88,6 +93,12 @@ NixOS 非常不同，如果你想安装软件，有多种安装方式，这里�
 </div>
 
 3. 命令式的软件包管理（`nix-env -iA nixos.<包名>`）
+
+<div class="warning">
+ 
+> 不推荐使用这种方式安装软件
+ 
+</div>
 
 <div class="info">
 
