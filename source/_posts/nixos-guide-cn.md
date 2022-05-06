@@ -56,11 +56,11 @@ NixOS 非常不同，如果你想安装软件，有多种安装方式，这里�
 >
 >比如说我需要装git，把 git 写进`configuration.nix`
 >
->```nix
->environment.systemPackages = with pkgs; [ 
->git
->];  
->```
+> ```nix
+> environment.systemPackages = with pkgs; [ 
+> git
+> ];  
+> ```
 >
 >然后 `nixos-rebuild boot`重启就可以安装完成
 >
