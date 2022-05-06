@@ -41,11 +41,11 @@ links:
     desc: 14岁，事初中生
     color: "#39c5bb"
 
-  - url: "https://gmoe.cc",
-    avatar: "https://gmoe.cc/img/gu.jpg",
-    name: 咕谷酱",
-    blog: "咕萌小站",
-    desc: "「世界に忘れられた」",
+  - url: "https://gmoe.cc"
+    avatar: "https://gmoe.cc/img/gu.jpg"
+    name: "咕谷酱"
+    blog: "咕萌小站"
+    desc: "「世界に忘れられた」"
     color: "#deae9c"
 
 
