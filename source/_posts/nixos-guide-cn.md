@@ -588,7 +588,11 @@ hardware.opengl.extraPackages = [
   services.xserver.videoDrivers = [ "nvidia" ];
 ```
 
+<div class="warning">
+
 > 提示：由于 NVIDIA 的驱动是非自由软件，你同时还需要在配置文件中使用 `  nixpkgs.config.allowUnfree = true;`启用非自由软件
+ 
+</div>
 
 #### 使用数位板：
 
