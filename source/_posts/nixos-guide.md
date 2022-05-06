@@ -318,7 +318,7 @@ vim /mnt/etc/nixos/configuration.nix
 
 #### 使用NetworkManager联网
 
-![](https://pic.lanta.cyou/img/屏幕截图 2022-05-06 104115.png)
+![](https://pic.lanta.cyou/img/20220506104638.png)
 
 #### 设置中文
 
