@@ -655,18 +655,12 @@ hardware.opengl.extraPackages = [
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak update
 ```
-#### 安装NTFS 3G（可选）
+#### 开启支持NTFS读写
 
 <div class="warning">
 
->如果你有使用NTFS格式的硬盘，请务必安装NTFS 3G让NixOS可以读取NTFS的数据
+>如果你有使用NTFS格式的硬盘，加上以下字段以支持NTFS的读写
  
-</div>
-
-安装软件包 `ntfs3g`
-
-并加上以下字段
-
 ```nix
 boot.supportedFilesystems = [ "ntfs" ];
 ```
