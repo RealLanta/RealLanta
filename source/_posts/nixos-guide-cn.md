@@ -9,7 +9,8 @@ date: 2022-05-06 09:15:59
 tags: 
  - NixOS
  - Linux
-categories: 体验
+ - Guide
+categories: 教程
 
 ---
 
