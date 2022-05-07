@@ -391,7 +391,7 @@ mount /dev/sda2 /mnt/home # 挂载用户资料分区到 /mnt/home( /home 分区�
 
 ## 安装本体到硬盘
 
-## 使用中国的 nix-channel
+### 使用中国的 nix-channel
 
 ```shell
 nix-channel --add https://mirrors.ustc.edu.cn/nix-channels/nixos-unstable nixos
@@ -555,7 +555,7 @@ vim /mnt/etc/nixos/configuration.nix
 
 ![](https://pic.lanta.cyou/img/photo_2022-05-06_13-49-27.jpg)
 
-```
+```nix
   environment.systemPackages = with pkgs; [
     nur.repos.xddxdd.wechat-uos-bin
    ];
@@ -655,6 +655,15 @@ hardware.opengl.extraPackages = [
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak update
 ```
+#### 安装NTFS3G（可选）
+
+<div class="warning">
+
+>如果你有使用NTFS格式的硬盘，请务必安装NTFS3G让NixOS可以读取NTFS的数据
+ 
+</div>
+
+安装软件包 `ntfs3g`
 
 #### 使用 Docker
 
