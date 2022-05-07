@@ -389,14 +389,14 @@ mount /dev/sda2 /mnt/home # 挂载用户资料分区到 /mnt/home( /home 分区�
 
 （以上文段参考了[Chi_Tang的博客](https://chitang.tech/posts/arch-guide/#%E6%8C%82%E8%BD%BD)并进行修改）
 
+## 安装本体到硬盘
+
 ## 使用中国的 nix-channel
 
 ```shell
-nix-channel --add https://mirrors.tuna.tsinghua.edu.cn/nix-channels/nixos-unstable nixos
+nix-channel --add https://mirrors.ustc.edu.cn/nix-channels/nixos-unstable nixos
 nix-channel --update
 ```
-
-## 安装本体到硬盘
 
 ### 生成配置文件
 
@@ -540,7 +540,7 @@ vim /mnt/etc/nixos/configuration.nix
 
 对于某些有特殊需求的用户，需要在安装之前按需修改配置文件。
 
-#### 使用 NUR：
+#### 使用 NUR
 
 ```
   nixpkgs.config.packageOverrides = pkgs: {
@@ -565,7 +565,7 @@ vim /mnt/etc/nixos/configuration.nix
 >
 > 可以通过 `nix-env -iA nixos.v2ray` 在安装 LiveCD 里临时安装 `v2ray`。对于带有 GUI 的 LiveCD，可使用 `nix-env -iA nixos.qv2ray`。在使用 `qv2ray` 的时候，需参照 https://qv2ray.net/lang/zh/getting-started/step2.html 配置其核心文件。
 
-#### 使用 AMD 显卡：
+#### 使用 AMD 显卡
 
 ```
 hardware.opengl.extraPackages = [
@@ -574,7 +574,7 @@ hardware.opengl.extraPackages = [
 ];
 ```
 
-#### 使用 Intel Gen8 或更新的显卡：
+#### 使用 Intel Gen8 或更新的显卡
 
 ```
 hardware.opengl.extraPackages = [
@@ -582,7 +582,7 @@ hardware.opengl.extraPackages = [
 ];
 ```
 
-#### 使用 NVIDIA 显卡：
+#### 使用 NVIDIA 显卡
 
 <div class="warning">
 
@@ -600,7 +600,7 @@ hardware.opengl.extraPackages = [
 
 </div>
 
-#### 使用数位板：
+#### 使用数位板
 
 ```nix
   services.xserver.wacom.enable = true;
@@ -609,35 +609,35 @@ hardware.opengl.extraPackages = [
   hardware.opentabletdriver.daemon.enable = true;
 ```
 
-#### 使用 Steam：
+#### 使用 Steam
 
 ```
   programs.steam.enable = true;
 ```
 
-#### 使用 AppImage：
+#### 使用 AppImage
 
 安装软件包 `appimage-run`
 
-#### 使用为常规 Linux 而编译的二进行程序：
+#### 使用为常规 Linux 而编译的二进行程序
 
 安装软件包 `steam-run`
 
-#### 在 NixOS 中作为宿主时使用 VirtualBox：
+#### 在 NixOS 中作为宿主时使用 VirtualBox
 
 ```nix
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "<用户名>" ];
 ```
 
-#### 在 NixOS 中作为宿主时使用 KVM：
+#### 在 NixOS 中作为宿主时使用 KVM
 
 ```nix
   virtualisation.libvirtd.qemu.package = pkgs.qemu_kvm;
   virtualisation.libvirtd.enable = true;
 ```
 
-#### 使用 Flatpak：
+#### 使用 Flatpak
 
 ```nix
   services.flatpak.enable = true;
@@ -656,7 +656,7 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 flatpak update
 ```
 
-#### 使用 Docker：
+#### 使用 Docker
 
 ```nix
   virtualisation.docker.enable = true;
@@ -664,7 +664,7 @@ flatpak update
 
 此外，你还需要将用户加入 "docker" 用户组
 
-#### 使用其他 Linux 内核：
+#### 使用其他 Linux 内核
 
 可使用 `boot.kernel## 使用中国的 nix-channel
 
@@ -674,7 +674,7 @@ nix-channel --update
 ```
 
 
-#### Packages` 选项来指定 NixOS 使用的内核。例如：使用 `linux-zen`
+#### `Packages` 选项来指定 NixOS 使用的内核。例如：使用 `linux-zen`
 
 ```nix
   boot.kernelPackages = pkgs.linuxPackages_zen;
@@ -697,7 +697,7 @@ nix-channel --update
 
 </div>
 
-### 安装 NixOS：
+### 安装 NixOS
 
 ```bash
 nixos-install --root /mnt
