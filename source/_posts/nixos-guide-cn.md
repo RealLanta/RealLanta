@@ -9,7 +9,7 @@ date: 2022-05-06 09:15:59
 tags: 
  - NixOS
  - Linux
- - Guide
+ - 保姆级教程
 categories: 教程
 
 ---
