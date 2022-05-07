@@ -95,9 +95,9 @@ NixOS 非常不同，如果你想安装软件，有多种安装方式，这里�
 3. 命令式的软件包管理（`nix-env -iA nixos.<包名>`）
 
 <div class="warning">
- 
+
 > 不推荐使用这种方式安装软件
- 
+
 </div>
 
 <div class="info">
@@ -176,13 +176,6 @@ NixOS跟其他Linux发行版最大的不同就是，NixOS 的配置是可复现�
 在纯文字的环境中你可能**很难分辨**分区，如果**操作失误**（删错分区）~~则删库跑路~~
 
 所以我建议你**事先**在Windows环境中**确定**要安装的系统分区，以确保不会出现失误导致的~~数据灰飞烟灭~~
-
-## 使用中国的 nix-channel
-
-```shell
-nix-channel --add https://mirrors.tuna.tsinghua.edu.cn/nix-channels/nixos-unstable nixos
-nix-channel --update
-```
 
 
 ## 引导设置（UEFI用户）
@@ -396,6 +389,13 @@ mount /dev/sda2 /mnt/home # 挂载用户资料分区到 /mnt/home( /home 分区�
 
 （以上文段参考了[Chi_Tang的博客](https://chitang.tech/posts/arch-guide/#%E6%8C%82%E8%BD%BD)并进行修改）
 
+## 使用中国的 nix-channel
+
+```shell
+nix-channel --add https://mirrors.tuna.tsinghua.edu.cn/nix-channels/nixos-unstable nixos
+nix-channel --update
+```
+
 ## 安装本体到硬盘
 
 ### 生成配置文件
@@ -485,7 +485,7 @@ vim /mnt/etc/nixos/configuration.nix
 <div class="warning">
 
 > 警告：在 NixOS 上，无法同时启用 GNOME 和 KDE Plasma。
- 
+
 </div>
 
 ```nix
@@ -589,7 +589,7 @@ hardware.opengl.extraPackages = [
 > 警告：如果你正在为 Linux 选购硬件，除非特殊需要，请避免使用由 NVIDIA，Realtek，Broadcom 以及 Apple Inc 生产的设备。在这些公司所生产的硬件设备上部署 Linux 可能会非常棘手。
 
 </div>
- 
+
 ```nix
   services.xserver.videoDrivers = [ "nvidia" ];
 ```
@@ -597,7 +597,7 @@ hardware.opengl.extraPackages = [
 <div class="info">
 
 > 提示：由于 NVIDIA 的驱动是非自由软件，你同时还需要在配置文件中使用 `  nixpkgs.config.allowUnfree = true;`启用非自由软件
- 
+
 </div>
 
 #### 使用数位板：
