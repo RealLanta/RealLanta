@@ -665,6 +665,12 @@ flatpak update
 
 安装软件包 `ntfs3g`
 
+并加上以下字段
+
+```nix
+boot.supportedFilesystems = [ "ntfs" ];
+```
+
 #### 使用 Docker
 
 ```nix
