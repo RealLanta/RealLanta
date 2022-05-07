@@ -3,6 +3,7 @@ title: 一个配置文件就能在各个电脑装一模一样的系统和软件�
 author: 
  - Lanta
  - 一穂灯花
+ - Chi_Tang
  - NixOS Chinese Community
 date: 2022-05-06 09:15:59
 tags: 
@@ -166,7 +167,7 @@ NixOS跟其他Linux发行版最大的不同就是，NixOS 的配置是可复现�
 
 
 | 名称                                          | 使用方式                                        | 备注               |
-| --------------------------------------------- | ----------------------------------------------- | ------------------ |
+| -----------------如果你有使用 NTFS 格式的硬盘，在 `configuration.nix` 中加入以下字段来提供 NTFS 的支持---------------------------- | ----------------------------------------------- | ------------------ |
 | [Ventoy](https://ventoy.net/)                 | 将Ventoy安装到U盘后直接把ISO文件复制到U盘中即可 | 一次安装，一盘多用 |
 | [Rufus](https://rufus.ie/)                    | 选择ISO文件然后选择U盘直接刻录即可              | 注意选择引导方式   |
 | [balenaEtcher](https://www.balena.io/etcher/) | 选择ISO文件然后选择U盘点击Flash开始刻录         | 最简单的方法       |
@@ -659,11 +660,13 @@ flatpak update
 
 <div class="warning">
 
->如果你有使用 NTFS 格式的硬盘，加上以下字段以支持 NTFS 的读写
- 
+> 如果你有使用 NTFS 格式的硬盘，在 `configuration.nix` 中加入以下字段来提供 NTFS 的支持
+
 ```nix
 boot.supportedFilesystems = [ "ntfs" ];
 ```
+
+</div>
 
 #### 使用 Docker
 
