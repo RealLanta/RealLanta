@@ -666,7 +666,15 @@ flatpak update
 
 #### 使用其他 Linux 内核：
 
-可使用 `boot.kernelPackages` 选项来指定 NixOS 使用的内核。例如：使用 `linux-zen`
+可使用 `boot.kernel## 使用中国的 nix-channel
+
+```shell
+nix-channel --add https://mirrors.tuna.tsinghua.edu.cn/nix-channels/nixos-unstable nixos
+nix-channel --update
+```
+
+
+#### Packages` 选项来指定 NixOS 使用的内核。例如：使用 `linux-zen`
 
 ```nix
   boot.kernelPackages = pkgs.linuxPackages_zen;
@@ -677,6 +685,14 @@ flatpak update
 ```nix
   nix.settings.substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];
 ```
+
+> 注意
+>
+> 在NixOS 21.11中，不存在 `nix.settings` 段
+>
+> 所以如果你安装的是NixOS 21.11，要改成下面这样：
+>
+> `nix.binaryCaches.substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];`
 
 ### 安装 NixOS：
 
