@@ -641,6 +641,12 @@ hardware.opengl.extraPackages = [
 
 #### 使用 Flatpak
 
+<div class="warning">
+
+>如果你这 Flatpak 安装了有中文的软件，请在 `~/.local/share/fonts/` 目录里放几个中文字体，否则中文无法正常显示
+ 
+</div>
+
 ```nix
   services.flatpak.enable = true;
 ```
