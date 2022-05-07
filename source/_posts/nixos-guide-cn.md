@@ -685,6 +685,7 @@ nix-channel --update
 ```nix
   nix.settings.substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];
 ```
+<div class="warning">
 
 > 注意
 >
@@ -692,7 +693,9 @@ nix-channel --update
 >
 > 所以如果你安装的是NixOS 21.11，要改成下面这样：
 >
-> `nix.binaryCaches.substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];`
+> `nix.binaryCaches = [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];`
+
+</div>
 
 ### 安装 NixOS：
 
