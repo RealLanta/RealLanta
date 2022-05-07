@@ -483,7 +483,7 @@ vim /mnt/etc/nixos/configuration.nix
 #### 设置桌面环境
 
 如果你使用的是Plasma，那么生成配置文件的时候会自动帮你设置好Plasma，Gnome用户同理。这里以 KDE Plasma 和 GNU GNOME 为例：
-boot.supportedFilesystems = [ "ntfs" ];
+
 <div class="warning">
 
 > 警告：在 NixOS 上，无法同时启用 GNOME 和 KDE Plasma。
