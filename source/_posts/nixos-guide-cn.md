@@ -644,7 +644,7 @@ hardware.opengl.extraPackages = [
 <div class="warning">
 
 >如果你这 Flatpak 安装了有中文的软件，请在 `~/.local/share/fonts/` 目录里放几个中文字体，否则中文无法正常显示
- 
+
 </div>
 
 ```nix
@@ -685,15 +685,7 @@ boot.supportedFilesystems = [ "ntfs" ];
 
 #### 使用其他 Linux 内核
 
-可使用 `boot.kernel## 使用中国的 nix-channel
-
-```shell
-nix-channel --add https://mirrors.tuna.tsinghua.edu.cn/nix-channels/nixos-unstable nixos
-nix-channel --update
-```
-
-
-#### `Packages` 选项来指定 NixOS 使用的内核。例如：使用 `linux-zen`
+`Packages` 选项来指定 NixOS 使用的内核。例如：使用 `linux-zen`
 
 ```nix
   boot.kernelPackages = pkgs.linuxPackages_zen;
