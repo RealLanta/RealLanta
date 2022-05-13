@@ -462,11 +462,11 @@ vim /etc/hosts
 如果进入系统后突然发现系统联网不正常，一般来说装个NetworkManager或Connman就能解决
 
 ```bash
-pacman -S networkmanager
+pacman -S networkmanager-runit
 ```
 
 ```bash
-ln -s /etc/runit/sv/networkmanager /etc/runit/runsvdir/default
+ln -s /etc/runit/service/NetworkManager /run/runit/sv
 ```
 
 
@@ -486,7 +486,7 @@ pacman -S connman-runit connman-gtk # 安装Connman
 将Connman开机自启动
 
 ```bash
-ln -s /etc/runit/sv/NetworkManager /etc/runit/runsvdir/default
+ln -s /etc/runit/sv/connmand /etc/runit/runsvdir/default
 ```
 
 ![](https://pic.lanta.cyou/img/2022-04-09_11-14.png)
