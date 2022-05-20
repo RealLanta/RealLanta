@@ -1,16 +1,39 @@
-### Hi there 👋
 
-<!--
-**RealLanta/RealLanta** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+:star2: 日常摸鱼的高一学生
 
-Here are some ideas to get you started:
+- :octocat: 偶尔在 GitHub 上发点自己做的小东西
+- :put_litter_in_its_place: 2022 年还在写 VB6 的屑
+- :penguin: 是 Arch Linux 教徒
+- :cn: 希望为互联网中文化贡献力量
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+<!---放一堆资料卡而懒得写资料 这人屑死了--->
+
+<div align="center">
+  
+  [![OS:ArchLinux](https://img.shields.io/badge/系统-ArchLinux-blue?style=flat&logo=archlinux)](https://archlinux.org)
+  [![DE:Plasma](https://img.shields.io/badge/桌面-Plasma-lightblue?style=flat&logo=KDE)](https://kde.org)
+  [![Browser:Firefox](https://img.shields.io/badge/浏览器-Firefox-red?style=flat&logo=firefox)](https://mozilla.org)
+  [![Language:Visual Basic](https://img.shields.io/badge/语言-Visual%20Basic-blue?style=flat&logo=visualstudio)](https://visualstudio.microsoft.com/)
+  [![Language:PHP](https://img.shields.io/badge/语言-PHP-purple?style=flat&logo=php)](https://php.net)
+  [![Language:Python](https://img.shields.io/badge/语言-Python-blue?style=flat&logo=python)](https://python.org)
+  
+</div>
+  
+
+<div align="center">
+  
+[![Blog](https://img.shields.io/badge/博客-blue?style=flat)](https://blog.yidaozhan.ga)
+![QQ:3526514925](https://img.shields.io/badge/QQ-3526514925-yellow?style=flat&logo=tencentqq)
+[![Bilibili:是一刀斩哒](https://img.shields.io/badge/Bilibili-是一刀斩哒-pink?style=flat&logo=bilibili)](https://space.bilibili.com/485832788)
+![Discord](https://img.shields.io/badge/Discord-YidaozhanYa%238565-blue?style=flat&logo=discord)
+[![Telegram:YidaozhanYa](https://img.shields.io/badge/Telegram-YidaozhanYa-cyan?style=flat&logo=telegram)](https://t.me/YidaozhanYa)
+
+</div>
+
+---
+
+<div align="center">
+  
+![状态](https://github-readme-stats.vercel.app/api?username=YidaozhanYa&locale=cn&show_icons=true)
+
+</div>
