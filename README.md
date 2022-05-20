@@ -1,8 +1,8 @@
 
 :star2: 14岁，事初一学生
 
-- :penguin: 是 Arch Linux 教徒
-- :cn: 希望为互联网中文化贡献力量
+- :penguin: 是 Arch Linux 用户
+- :cn: 正在中文化各种奇奇怪怪的东西
 
 
 <div align="center">
