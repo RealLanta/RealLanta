@@ -1,9 +1,10 @@
 ---
-title: 如何给OpenBSD安装XFCE、中文字体、Fcitx拼音输入法？
+title: 从图形桌面到中文——OpenBSD调教教程
 date: 2022-05-01 12:45:54
 tags:
  - BSD
  - OpenBSD
+ - 保姆级教程
 categories: 教程
 ---
 
@@ -31,16 +32,26 @@ categories: 教程
 
 # 开始前的准备
 
-首先安装`consolekit2`
+首先安装`nano`作为我们的文本编辑器（当然你使用`vim`也是可以的）
+
+```bash
+pkg_add nano # or vim
+```
+
+然后安装`consolekit2`
 
 ```bash
 pkg_add consolekit2
 ```
 
-再安装`nano`作为我们的文本编辑器（当然你使用`vim`也是可以的）
+# 设置软件源
+
+我们可以将软件源设置到清华软件镜像源中以加快我们的软件下载速度
+
+直接在终端运行以下命令
 
 ```bash
-pkg_add nano # or vim
+export PKG_PATH="https://mirrors.tuna.tsinghua.edu.cn/OpenBSD/$(uname -r)/packages/$(arch -s)/"
 ```
 
 # 安装桌面环境
@@ -106,7 +117,7 @@ nano /home/<username>/.xsession
 ## 设置`xenodm`开机自启动
 
 ```bash
-rcctl enable xendom
+rcctl enable xenodm
 ```
 
 <div class="success">
