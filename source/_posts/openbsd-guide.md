@@ -4,13 +4,25 @@ date: 2022-05-01 12:45:54
 tags:
  - BSD
  - OpenBSD
- - 保姆级教程
 categories: 教程
 ---
 
+# 什么是OpenBSD
+
+<div class="info">
+
+
+>**OpenBSD**是一个[类Unix](https://zh.wikipedia.org/wiki/类Unix)计算机[操作系统](https://zh.wikipedia.org/wiki/操作系统)，是[加州大学伯克利分校](https://zh.wikipedia.org/wiki/加州大学伯克利分校)所开发的[Unix](https://zh.wikipedia.org/wiki/Unix)派生系统[伯克利软件套件](https://zh.wikipedia.org/wiki/BSD)（BSD）的一个后继者。它是在1995年尾由[荷裔加拿大籍](https://zh.wikipedia.org/wiki/荷裔加拿大人)项目领导者[西奥·德·若特](https://zh.wikipedia.org/wiki/西奧·德·若特)（Theo de Raadt）从[NetBSD](https://zh.wikipedia.org/wiki/NetBSD)[分支](https://zh.wikipedia.org/wiki/复刻_(软件工程))而出。
+
+</div>
+
+*来自维基百科[OpenBSD](https://zh.wikipedia.org/wiki/OpenBSD)条目*
+
+# 开始安装
+
 <div class="warning">
 
->由于OpenBSD的安装并不复杂，有完整的安装脚本，所以本文将不再赘述如何安装OpenBSD本体
+>由于OpenBSD的安装并不复杂，有完整的安装脚本，所以本文将不再详细赘述如何安装OpenBSD本体
 
 </div>
 
@@ -20,15 +32,23 @@ categories: 教程
 
 </div>
 
-# 什么是OpenBSD
+<div class="warning">
 
-<div class="info">
-
->**OpenBSD**是一个[类Unix](https://zh.wikipedia.org/wiki/类Unix)计算机[操作系统](https://zh.wikipedia.org/wiki/操作系统)，是[加州大学伯克利分校](https://zh.wikipedia.org/wiki/加州大学伯克利分校)所开发的[Unix](https://zh.wikipedia.org/wiki/Unix)派生系统[伯克利软件套件](https://zh.wikipedia.org/wiki/BSD)（BSD）的一个后继者。它是在1995年尾由[荷裔加拿大籍](https://zh.wikipedia.org/wiki/荷裔加拿大人)项目领导者[西奥·德·若特](https://zh.wikipedia.org/wiki/西奧·德·若特)（Theo de Raadt）从[NetBSD](https://zh.wikipedia.org/wiki/NetBSD)[分支](https://zh.wikipedia.org/wiki/复刻_(软件工程))而出。
+>OpenBSD和大多数Linux发行版一样是不能使用`root`账户登入桌面环境的，因此在安装过程中请务必另外新建一个普通账户
 
 </div>
 
-*来自维基百科[OpenBSD](https://zh.wikipedia.org/wiki/OpenBSD)条目*
+在安装过程中开启 X Window System
+
+![](https://pic.lanta.cyou/img/2022-05-21_00-03.png)
+
+第二项开机启动则为no，我们稍后安装好XFCE4后再开启
+
+![](https://pic.lanta.cyou/img/2022-05-21_00-04.png)
+
+如果安装过程中遇到了验证文件签名的问题可以直接跳过
+
+![](https://pic.lanta.cyou/img/2022-05-21_00-05.png)
 
 # 开始前的准备
 
@@ -36,12 +56,6 @@ categories: 教程
 
 ```bash
 pkg_add nano # or vim
-```
-
-然后安装`consolekit2`
-
-```bash
-pkg_add consolekit2
 ```
 
 # 设置软件源
@@ -58,20 +72,6 @@ export PKG_PATH="https://mirrors.tuna.tsinghua.edu.cn/OpenBSD/$(uname -r)/packag
 
 <div class="warning">
 
->OpenBSD和大多数Linux发行版一样是不能使用`root`账户登入桌面环境的，因此在安装过程中请务必另外新建一个普通账户
-
-</div>
-
-<div class="warning">
-
->请注意，一般情况下我不建议你使用OpenBSD自带的桌面环境，对于普通用户来说OpenBSD自带的桌面环境并不好用
->
->因此在安装过程中请务必不要安装桌面环境（脚本中默认是no）
-
-</div>
-
-<div class="warning">
-
 >执行该章节的安装步骤时请使用`root`账户
 
 </div>
@@ -81,7 +81,7 @@ export PKG_PATH="https://mirrors.tuna.tsinghua.edu.cn/OpenBSD/$(uname -r)/packag
 安装完成之后就继续安装XFCE本体以及XFCE套件中的其他软件
 
 ```bash
-pkg_add xfce xfce-extras
+pkg_add xfce xfce-extras consolekit2
 ```
 
 <div class="info">
