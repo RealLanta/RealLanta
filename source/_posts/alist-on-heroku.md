@@ -2,7 +2,9 @@
 title: 如何在Heroku上部署Alist？
 date: 2022-05-21 13:46:34
 tags: 
+ - 开发
  - Heroku
+ - OneDrive
 categories: 教程
 ---
 
