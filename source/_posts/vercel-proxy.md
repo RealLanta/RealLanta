@@ -155,18 +155,6 @@ What’s the name of your existing project? 项目名
 
 这样就搞定了
 
-## 速度演示
-
-拿我自己的联通卡开流量做演示（清了缓存的）
-
-背景图加载慢是Cloudflare的原因（拿的Workers反代）
-
-<link rel="stylesheet" href="https://g.alicdn.com/de/prismplayer/2.9.16/skins/default/aliplayer-min.css" />
-
-<script type="text/javascript" charset="utf-8" src="https://g.alicdn.com/de/prismplayer/2.9.16/aliplayer-min.js"></script>
-
-<div class="prism-player" id="player-con"></div><script>var player = new Aliplayer({  "id": "player-con",  "source": "https://cdn.lanta.cyou/ScreenRecord-2021-12-11-12-18-53.mp4",  "width": "100%",  "height": "500px",  "autoplay": false,  "isLive": false,  "cover": "",  "rePlay": false,  "playsinline": true,  "preload": true,  "controlBarVisibility": "hover",  "useH5Prism": true}, function (player) {    console.log("The player is created");  });</script>
-
 ## 疑难解答
 
 ### 子域名？主域名？
