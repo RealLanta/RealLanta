@@ -106,8 +106,8 @@ npm install hexo-deployer-git –save
 配置好你的Git
 
 ~~~bash
-git config –global user.email “你注册github的邮箱”
-git config –global user.name “你的用户名”
+git config --global user.name "用户名"
+git config --global user.email 邮箱
 ~~~
 
 ## 选择一个适合你的编辑器
