@@ -13,12 +13,6 @@ tip: 友链加载中～如失败请刷新重试～
 <script src="https://cdn.jsdelivr.net/gh/Fgaoxing/blog-cdn@main/source/js/friends-api.js"></script>
 <script>qexo_friend_api("friends-api","https://qexo.lanta.cyou");</script>
 
-<div id="qexo-friends"></div>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/qexo-static@1.1.3/hexo/friends/friends.css"/>
-<script src="https://cdn.jsdelivr.net/npm/qexo-static@1.1.3/hexo/friends/friends.js"></script>
-<script>loadQexoFriends("qexo-friends", "https://qexo.lanta.cyou")</script>
-
-
 ## 添加友链
 
 如果你想跟我添加友链，请检查自己的网站是否满足以下需求
@@ -39,18 +33,7 @@ tip: 友链加载中～如失败请刷新重试～
 
 ### 申请
 
-如果你达到了这些要求，可以直接在下面评论区给我留言
-
-~~~json
-{
-  "url": "你的网站",
-  "avatar": "头像链接",
-  "name": "站主名称",
-  "blog": "站点名称",
-  "desc": "一句话介绍，非必填，如不填写则为默认＂这个站主很懒，连个介绍都不写＂",
-  "color": "代表色，非必填"
-}
-~~~
+如果你达到了这些要求，可以直接在上面的申请系统申请(Powerd by [Qexo](https://github.com/Qexo/Qexo))
 
 每周一次将会维护一次博客，我会尽快处理你的申请
 
