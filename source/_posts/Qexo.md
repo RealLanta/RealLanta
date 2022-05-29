@@ -115,7 +115,7 @@ master
 wrq_P8sYPlYA9fjMlOPEYSKA84xxxxxxxxxxxxxx
 ```
 
-![image-20220529113805881](file:///home/lanta/.config/Typora/typora-user-images/image-20220529113805881.png?lastModify=1653796403)
+![](https://pic.lanta.cyou/img/2022-05-29_11-37.png)
 
 ### 仓库路径
 
