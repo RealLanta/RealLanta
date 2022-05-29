@@ -14,7 +14,7 @@ Qexo 是一个快速、强大、漂亮的在线 Hexo 编辑器。使用 GPL 开�
 
 # 事前准备
 
-**准备好一个已经可以使用Github Actions部署Hexo的仓库**
+**准备好一个已经可以使用Github Actions部署Hexo的仓库（Vercel自动化部署的也行）**
 
 **如果不知道怎么搞可以看看这篇**[知乎的图文](https://zhuanlan.zhihu.com/p/170563000)
 
