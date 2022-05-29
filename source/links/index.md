@@ -9,9 +9,10 @@ placeholder: 这个站主很懒，连个介绍都不写 # 默认对友链的描�
 tip: 友链加载中～如失败请刷新重试～
 ---
 
-<div id="friends-api"></div>
-<script src="https://cdn.jsdelivr.net/gh/Fgaoxing/blog-cdn@main/source/js/friends-api.js"></script>
-<script>qexo_friend_api("friends-api","https://qexo.lanta.cyou");</script>
+<div id="qexo-friends"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/qexo-static@1.1.3/hexo/friends/friends.css"/>
+<script src="https://cdn.jsdelivr.net/npm/qexo-static@1.1.3/hexo/friends/friends.js"></script>
+<script>loadQexoFriends("qexo-friends", "${SITE}")</script>
 
 ## 添加友链
 
@@ -32,6 +33,10 @@ tip: 友链加载中～如失败请刷新重试～
 - HTTPS支持
 
 ### 申请
+
+<div id="friends-api"></div>
+<script src="https://cdn.jsdelivr.net/gh/Fgaoxing/blog-cdn@main/source/js/friends-api.js"></script>
+<script>qexo_friend_api("friends-api","https://qexo.lanta.cyou");</script>
 
 如果你达到了这些要求，可以直接在上面的申请系统申请(Powerd by [Qexo](https://github.com/Qexo/Qexo))
 
