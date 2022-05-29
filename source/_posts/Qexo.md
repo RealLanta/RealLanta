@@ -155,18 +155,21 @@ path/
 
 前往你的Qexo项目
 
-Settings -> General
+Settings 里面的 General
 
 往下滑就可以看到Project ID
 
 ![](https://pic.lanta.cyou/img/2022-05-29_11-45.png)
 
-## 完成
+# 完成
 
 ![](https://pic.lanta.cyou/img/2022-05-29_11-50.png)
 
-<div class="sucess">
+<div class="success">
 
 > 至此，Qexo的安装就已经完成了
+> 本博客也使用了Qexo进行管理
+> 祝你使用愉快
 
 </div>
+
