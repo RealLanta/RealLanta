@@ -149,9 +149,9 @@ social:
     link: https://t.me/lanta_channel
     icon: icon-telegram-line
     color: "#0088CC"
-  - name: Video Station
-    link: https://lanta.cyou/video/list.html
-    icon: ri-video-line
+  - name: Qexo
+    link: https://qexo.lanta.cyou
+    icon: ri-admin-line
     color: black
   - name: Travelling
     link: https://travellings.link
