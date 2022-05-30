@@ -5,14 +5,61 @@ date: 2021-12-18 10:28:09
 keywords: 链接
 description: 一个普通的友链列表
 comments: true
+links:
+  - url: https://yunyoujun.cn
+    avatar: https://cdn.jsdelivr.net/gh/YunYouJun/yunyoujun.github.io/images/avatar.jpg
+    name: 云游君
+    blog: 云游君的小站
+    desc: All at sea.
+    color: "#0078e7"
+
+  - url: https://edenjohnson.cyou/
+    avatar: https://pic.edenjohnson.cyou/images/20200625174516.png
+    name: EdenJohnson
+    blog: Eden瞎写小屋
+    desc: 准初三屑的博客
+    color: "#0078e7"
+
+  - url: https://ahdark.com/
+    avatar: https://sdn.ahdark.com/avatar/394044eaff12a95b0b91cbdc2e8871a4?s=512
+    name: AHdark
+    blog: AHdark Blog
+    desc: 亦余心之所善兮，虽九死其犹未悔。
+    color: "#FF8000"
+
+  - url: https://blog.589000.xyz/
+    avatar: https://q1.qlogo.cn/g?b=qq&nk=3152293832&s=640
+    name: 小岚
+    blog: 小岚的小窝
+    desc: 白嫖的天空无限蓝
+    color: "#0078e7"
+
+  - url: https://www.zyglq.cn
+    avatar: https://cos.zyglq.cn/1l.jpg
+    name: explorer
+    blog: explorer的blog
+    desc: 14岁，事初中生
+    color: "#39c5bb"
+
+  - url: "https://gmoe.cc"
+    avatar: "https://gmoe.cc/img/gu.jpg"
+    name: "咕谷酱"
+    blog: "咕萌小站"
+    desc: "「世界に忘れられた」"
+    color: "#deae9c"
+
+  - url: "https://dh.niufuyu.top/"
+    avatar: "https://dh.niufuyu.top/wp-content/uploads/2022/05/logo-dark_collapsed@2x-80x80-1.png"
+    name: "NIUIO导航官方"
+    blog: "NIUIO导航"
+    desc: "初中生建的屑导航"
+    color: "#0078e7"
+
+
 placeholder: 这个站主很懒，连个介绍都不写 # 默认对友链的描述
 tip: 友链加载中～如失败请刷新重试～
 ---
 
-<div id="qexo-friends"></div>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/qexo-static@1.1.3/hexo/friends/friends.css"/>
-<script src="https://cdn.jsdelivr.net/npm/qexo-static@1.1.3/hexo/friends/friends.js"></script>
-<script>loadQexoFriends("qexo-friends", "https://qexo.lanta.cyou")</script>
 
 ## 添加友链
 
@@ -34,15 +81,21 @@ tip: 友链加载中～如失败请刷新重试～
 
 ### 申请
 
-<div id="friends-api"></div>
-<script src="https://cdn.jsdelivr.net/gh/Fgaoxing/blog-cdn@main/source/js/friends-api.js"></script>
-<script>qexo_friend_api("friends-api","https://qexo.lanta.cyou");</script>
+如果你达到了这些要求，可以直接在下面评论区给我留言
 
-如果你达到了这些要求，可以直接在上面的申请系统申请(Powerd by [Qexo](https://github.com/Qexo/Qexo))
+~~~json
+{
+  "url": "你的网站",
+  "avatar": "头像链接",
+  "name": "站主名称",
+  "blog": "站点名称",
+  "desc": "一句话介绍，非必填，如不填写则为默认＂这个站主很懒，连个介绍都不写＂",
+  "color": "代表色，非必填"
+}
+~~~
 
 每周一次将会维护一次博客，我会尽快处理你的申请
 
 当添加完你的申请，我会把你的申请评论给删除
 
 最后祝你生活愉快
-
