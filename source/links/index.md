@@ -55,11 +55,16 @@ links:
     desc: "初中生建的屑导航"
     color: "#0078e7"
 
+  - url: "https://www.iruanp.com/"
+    avatar: "https://fimg.tk/storage7/64e7e296665e3c52b14c6fa9b568ca03.png"
+    name: "Floppy β Studio"
+    blog: "软盘君的博客"
+    desc: "软盘君的博客"
+    color: "#deae9c"
 
 placeholder: 这个站主很懒，连个介绍都不写 # 默认对友链的描述
 tip: 友链加载中～如失败请刷新重试～
 ---
-
 
 ## 添加友链
 
@@ -99,3 +104,4 @@ tip: 友链加载中～如失败请刷新重试～
 当添加完你的申请，我会把你的申请评论给删除
 
 最后祝你生活愉快
+
