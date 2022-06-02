@@ -109,7 +109,7 @@ algolia:
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
-deploy:
-  type: git
-  repo: git@github.com:RealLanta/reallanta.github.io.git
-  branch: main
+#deploy:
+#  type: git
+#  repo: git@github.com:RealLanta/reallanta.github.io.git
+#  branch: main
