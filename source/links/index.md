@@ -62,6 +62,13 @@ links:
     desc: "软盘君的博客"
     color: "#deae9c"
 
+  - url: "https://sugarmgp.vercel.app"
+    avatar: "https://sugarmgp.vercel.app/images/avatar.png"
+    name: "SugarMGP"
+    blog: "SugarMGP's Blog"
+    desc: " SugarMGP's Blog"
+    color: "#deae9c"
+
 placeholder: 这个站主很懒，连个介绍都不写 # 默认对友链的描述
 tip: 友链加载中～如失败请刷新重试～
 ---
