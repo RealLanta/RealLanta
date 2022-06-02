@@ -14,7 +14,7 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v2
         with:
-          ref: master
+          node-version: 16.x
 
       - name: Setup Node.js
         uses: actions/setup-node@v1
