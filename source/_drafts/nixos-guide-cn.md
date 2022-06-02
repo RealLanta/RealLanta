@@ -524,6 +524,7 @@ environment.systemPackages = with pkgs; [
 ```
 hardware.opengl.extraPackages = with pkgs; [
    rocm-opencl-icd
+   rocm-opencl-runtime
    pkgs.amdvlk
 ];
 ```
