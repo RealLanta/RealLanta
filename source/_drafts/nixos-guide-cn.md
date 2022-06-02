@@ -522,9 +522,9 @@ environment.systemPackages = with pkgs; [
 #### 使用 AMD 显卡
 
 ```
-hardware.opengl.extraPackages = [
-  rocm-opencl-icd
-  pkgs.amdvlk
+hardware.opengl.extraPackages = with pkgs; [
+   rocm-opencl-icd
+   pkgs.amdvlk
 ];
 ```
 
