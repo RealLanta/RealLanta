@@ -38,7 +38,7 @@ mode: auto
 
 # 头像设置
 avatar:
-  url: https://pic.lanta.cyou/img/90558841_p1.png
+  url: https://www.lanta.cyou/avatar.jpg
   rounded: true
   opacity: 1
 
