@@ -1,8 +1,6 @@
 #外观设置
 # 导入MDUI
 head:
-  preconnect:
-   - https://jsd.lanta.cyou
   css:
     material: https://fonts.googleapis.com/icon?family=Material+Icons
     remix: https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css
