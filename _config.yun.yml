@@ -118,14 +118,6 @@ waline:
   # visitor: true
   comment: false
 
-
-# 版权设置
-creative_commons:
-  license: by-nc-sa
-  post: true
-  language: deed.zh
-  clipboard: false
-
 # 打赏设置
 reward:
   enable: false
