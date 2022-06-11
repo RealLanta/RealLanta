@@ -72,6 +72,18 @@ codeblock:
     light: default
     dark: tomorrow
 
+# 咕噜咕噜统计
+google_analytics:
+  enable: true
+  id: G-TLL70ZMZE3
+
+# 版权设置
+creative_commons:
+  license: by-nc-nd
+  post: true
+  language: deed.zh
+  clipboard: true
+
 # 页脚设置
 footer:
   since: 2021
