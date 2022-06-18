@@ -1,7 +1,6 @@
 ---
 title: DIED
 date: 2022-06-18 09:32:53
-hidden: true
 tags:
 ---
 
