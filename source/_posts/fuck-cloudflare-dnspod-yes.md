@@ -11,7 +11,7 @@ tags:
 
 # STOP USING DNSPOD
 
-因为某些众所周知的监控原因，如果您使用DNSPOD会不会影响到你的人身安全
+因为某些众所周知的监控原因，如果您使用DNSPOD可能会影响到你的人身安全
 
 <font size="+4">
 
