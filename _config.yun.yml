@@ -181,3 +181,7 @@ menu:
     title: Waline控制面板
     path: https://waline.lanta.cyou/ui
     icon: material-icons comment
+
+ # CDN
+ vendors:
+   host: 'https://fastly.jsdelivr.net/npm/'
