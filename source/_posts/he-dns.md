@@ -66,3 +66,47 @@ tags:
 ![](https://pic.lanta.cyou/img/2022-06-25_10-59.png)
 
 然后你可以等待几万年之后点一下 *Check Delegation* 按钮检查DNS服务器是否更改，没有就继续等几万年
+
+![](https://pic.lanta.cyou/img/2022-06-25_12-29.png)
+
+出现 **Delegation found, zone enabled.** 的提示的时候就说明我们的DNS服务器生效了
+
+# 添加解析
+
+在上面的菜单中就可以新建解析记录了
+
+![](https://pic.lanta.cyou/img/2022-06-25_12-35.png)
+
+假如我要把`www.lanta.cyou`CNAME解析到Vercel
+
+![](https://pic.lanta.cyou/img/2022-06-25_12-39.png)
+
+<div class="warning">
+
+> 注意，部分域名解析服务商是不支持以@来解析CNAME的，HE也不例外
+>
+> 所以Vercel就有一个使用IP解析的解决方案，例如`76.76.21.21`
+>
+> ![](https://pic.lanta.cyou/img/2022-06-25_12-41.png)
+>
+> ![](https://pic.lanta.cyou/img/2022-06-25_12-42.png)
+
+</div>
+
+## TTL
+
+注意一下，TTL会影响你域名的解析速度，当然也是可以调节的
+
+> *TTL（time to live 生存时间）表示 DNS 记录的有效时间 - 因此何时需要重新检查地址。*
+
+![](https://pic.lanta.cyou/img/2022-06-25_12-49.png)
+
+假如我设置成5分钟，那么5分钟后他就会重新检查你解析的IP
+
+# 尾巴
+
+HE的DNS解析还是很快的，不愧是某大型互联网线路供应商
+
+当然，HE的UI就非常的古老，很有那种Pro人士使用的感觉
+
+各位可以去试试 :D
